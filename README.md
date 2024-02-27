@@ -7,19 +7,31 @@ git clone https://github.com/chaman56/aikart.git
 ```  
 
 ## initialize frontend
-``` cd aikart/frontend ```  
-``` npm install ```  
+``` 
+cd aikart/frontend 
+```  
+``` 
+npm install 
+```  
 
 
 ## initialize backend
-``` cd ../backend ```
-``` npm install ```  
+``` 
+cd ../backend 
+```  
+``` 
+npm install 
+```  
 
 ## run frontend  
-``` npm run dev ```  
+``` 
+npm run dev 
+```  
 
 
 ## run backend 
-``` npm start ```
+``` 
+npm start 
+```
 
 
