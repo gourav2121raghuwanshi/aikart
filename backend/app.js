@@ -13,9 +13,9 @@ const app = express();
 app.use(express.json())
 app.use(cookieParser());
 app.use(cors());
+app.use('/api/auth', authRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);
 })
 
-app.use('/api/auth', authRouter);
