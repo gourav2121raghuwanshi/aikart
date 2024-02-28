@@ -1,5 +1,6 @@
 import React from 'react'
 import homePageImg from "../assets/homePageImg.jpg"
+import Features from '../components/Features'
 const HomePage = () => {
   return (
     <div className='w-full'>
@@ -17,17 +18,20 @@ const HomePage = () => {
 
 
         </div>
-        <div className='w-full mt-5 mb-3'>
+        <div className='w-full mt-5 mb-3 max-h-[900px]'>
           <img
-            className='rounded-lg shadow-lg shadow-blue-200'
+            style={{ maxHeight: '900px' }}
+            className='rounded-lg shadow-lg shadow-blue-200 max-h-[900px]'
             loading='lazy'
             src={homePageImg}
             alt='Description'
           />
         </div>
 
-{/* Features page */}
+
       </div>
+      {/* Features page */}
+      <Features />
     </div>
   )
 }
