@@ -1,11 +1,15 @@
 import React from 'react'
 import wesiteLogo from "../assets/wesiteLogo.svg"
-
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 
 const NavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const { currentUser } = useSelector(state => state.user);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -15,39 +19,55 @@ const NavBar = () => {
   };
 
   return (
-    <nav className='w-full mx-auto mt-5'>
+    <nav className='w-full z-10 mx-auto mt-2  fixed'>
       <div className='flex flex-row justify-between w-11/12 mx-auto bg-gray-800 rounded-full px-3 py-2 sm:py-3 sm:p-4 shadow-lg'>
         <div className='flex flex-row gap-3 items-center'>
-          <Link to="/">
+          <Link to="/"
+            onClick={closeDropdown}>
             <div className='flex flex-row gap-2'>
               <img src={wesiteLogo} alt="Website Logo" height="25px" width="25px" />
               <span className='text-blue-400 font-bold text-xl '>AIKart</span>
             </div>
           </Link>
 
-          <div className='hidden text-white sm:block'>
-            Features
-          </div>
-          <div className='hidden text-white sm:block'>
-            Testimonials
-          </div>
-          <div className='hidden text-white sm:block'>
-            FAQ
-          </div>
+          <button className='hidden hover:cursor-pointer text-white sm:block'>
+            <Link to='/features'  >Features</Link>
+          </button>
+          <button className='hidden hover:cursor-pointer text-white sm:block'>
+            <Link to='/testimonials' >Testimonials</Link>
+          </button>
+          <button className='hidden hover:cursor-pointer text-white sm:block'>
+            <Link to='/faq' >FAQ</Link>
+          </button>
+
 
         </div>
         {/* part 2 */}
         <div className='flex flex-row gap-3    items-center'>
-          <div className='hidden sm:flex flex-row'>
-            <Link to={'sign-in'} >
-              <div className='font-semibold text-blue-400' >   Sign in</div>
-            </Link>
-          </div>
-          <div className='hidden sm:block'>
-            <Link to={'sign-up'} >
-              <div className=' px-3 py-1  rounded-xl bg-blue-400 text-white font-semibold'> Sign up</div>
-            </Link>
-          </div>
+
+          <Link to={'/profile'}
+          onClick={closeDropdown} >{
+            currentUser && <div className='rounded-full '>
+              <img src={currentUser.avatar || "https://res.cloudinary.com/domheydkx/image/upload/v1705905528/gourav/uyb6ntwjcrxacztiw4iv.jpg"}
+                className='rounded-full h-10 w-10 object-cover' alt='profile'>
+              </img>
+            </div>
+          }
+          </Link>
+          {
+            !currentUser && <div className='flex flex-row gap-3   items-center'>
+              <div className='hidden sm:flex flex-row'>
+                <Link to={'sign-in'} >
+                  <div className='font-semibold text-blue-400' >Sign in</div>
+                </Link>
+              </div>
+              <div className='hidden sm:block'>
+                <Link to={'sign-up'} >
+                  <div className=' px-3 py-1  rounded-xl bg-blue-400 text-white font-semibold'> Sign up</div>
+                </Link>
+              </div>
+            </div>
+          }
           {/* dropdown */}
           <div className="relative inline-block  sm:hidden text-left">
             <button
@@ -66,17 +86,25 @@ const NavBar = () => {
             {isDropdownOpen && (
               <div className="origin-top-right flex flex-col gap-3 p-4 absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                 <div className='flex flex-col gap-3'>
-                  <span>
+                  <Link
+                    to={'/features'}
+                    onClick={closeDropdown}>
                     Features
-                  </span>
-                  <span>
+                  </Link>
+                  <Link
+                    // to={'#testimonials'}
+                    to={'/testimonials'}
+                    onClick={closeDropdown}>
                     Testimonials
-                  </span>
-                  <span>
+                  </Link>
+                  <Link
+                    to={'/faq'}
+                    onClick={closeDropdown}>
                     FAQ
-                  </span>
+                  </Link>
+
                 </div>
-                <div
+                {!currentUser && <div
                   className="py-1 flex flex-col justify-center gap-3"
                   role="menu"
                   aria-orientation="vertical"
@@ -95,7 +123,12 @@ const NavBar = () => {
                     className="block px-4 text-center py-2 text-sm text-white  hover:bg-gray-700 rounded-2xl  bg-gray-600" role="menuitem">
                     Sign in
                   </Link>
-                </div>
+                </div>}
+
+
+
+
+
               </div>
             )}
           </div>

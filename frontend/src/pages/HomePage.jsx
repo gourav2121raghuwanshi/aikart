@@ -1,10 +1,12 @@
 import React from 'react'
 import homePageImg from "../assets/homePageImg.jpg"
 import Features from '../components/Features'
+import Testimonials from '../components/Testimonials'
+import FAQ from '../components/FAQ'
 const HomePage = () => {
   return (
     <div className='w-full'>
-      <div className='w-11/12 mt-5 mx-auto'>
+      <div className='w-11/12  pt-24 mx-auto'>
 
         <div className='w-11/12 mt-5 mx-auto bg-gray-100 rounded-xl p-8'>
           <div className='mx-auto text-center w-full'>
@@ -32,6 +34,11 @@ const HomePage = () => {
       </div>
       {/* Features page */}
       <Features />
+      {/* Testimonials page */}
+      <Testimonials/>
+      {/* FAQ page */}
+      <FAQ/>
+
     </div>
   )
 }

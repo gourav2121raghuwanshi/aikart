@@ -65,7 +65,7 @@ const SignUpPage = () => {
 
 
     return (
-        <div className='p-5 max-w-2xl mx-auto'>
+        <div className='p-5 pt-24 max-w-2xl mx-auto'>
 
             <h1 className='text-2xl sm:text-4xl text-slate-700 text-center font-semibold my-7 '>
                 Sign Up
