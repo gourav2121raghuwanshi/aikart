@@ -36,6 +36,7 @@ const NavBar = () => {
           </div>
 
         </div>
+        {/* part 2 */}
         <div className='flex flex-row gap-3    items-center'>
           <div className='hidden sm:flex flex-row'>
             <Link to={'sign-in'} >
@@ -47,6 +48,7 @@ const NavBar = () => {
               <div className=' px-3 py-1  rounded-xl bg-blue-300 text-white font-semibold'> Sign up</div>
             </Link>
           </div>
+          {/* dropdown */}
           <div className="relative inline-block  sm:hidden text-left">
             <button
               onClick={toggleDropdown}
@@ -75,7 +77,7 @@ const NavBar = () => {
                   </span>
                 </div>
                 <div
-                  className="py-1 flex flex-col gap-3"
+                  className="py-1 flex flex-col justify-center gap-3"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="options-menu"
@@ -84,13 +86,13 @@ const NavBar = () => {
                   <Link
                     onClick={closeDropdown}
                     to="/sign-up"
-                    className="block px-4 py-2 text-sm text-white rounded-2xl  bg-blue-400  hover:bg-gray-100" role="menuitem">
+                    className="block px-4 text-center  py-2 text-sm text-white rounded-2xl  bg-blue-400  hover:bg-blue-500" role="menuitem">
                     Sign up
                   </Link>
                   <Link
                     onClick={closeDropdown}
                     to="/sign-in"
-                    className="block px-4 py-2 text-sm text-white  hover:bg-gray-600 rounded-2xl  bg-gray-400" role="menuitem">
+                    className="block px-4 text-center py-2 text-sm text-white  hover:bg-gray-700 rounded-2xl  bg-gray-600" role="menuitem">
                     Sign in
                   </Link>
                 </div>
