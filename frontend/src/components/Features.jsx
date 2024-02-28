@@ -1,17 +1,15 @@
 import React from 'react'
 import dashboard from "../assets/dashboard.svg"
 import hoemPageImg from "../assets/homePageImg.jpg"
-import { useState } from 'react';
+
 const Features = () => {
-    const [isClicked, setIsClicked] = useState(false);
-    const handleClick = () => {
-        setIsClicked(!isClicked);
-    };
+    
     return (
-        <div className='mt-16 w-11/12 mx-auto'>
+        <section id="features" className='w-11/12 pt-24 mx-auto'>
             <div className='flex md:flex-row flex-col  justify-between p-2 gap-3'>
                 <div className='flex flex-1 flex-col gap-3'>
                     <div
+                        
                         className='text-3xl font-bold text-gray-700'>
                         Product features
                     </div>
@@ -20,8 +18,7 @@ const Features = () => {
                     </p>
                     <div
                         className={`hover:scale-95 transition-all duration-200 bg-gray-200 p-3 justify-center hover:bg-gray-300 rounded-2xl flex flex-col`}
-
-                        onClick={handleClick}
+                     
                     >
                         {/* dashboard */}
                         <img
@@ -42,7 +39,7 @@ const Features = () => {
                     <div
                         className={`hover:scale-95 transition-all duration-200 bg-gray-200 p-3 justify-center hover:bg-gray-300 rounded-2xl flex flex-col`}
 
-                        onClick={handleClick}
+                     
                     >
                         {/* mobile integration */}
                         <div>
@@ -64,7 +61,7 @@ const Features = () => {
                     <div
                         className={`hover:scale-95 transition-all duration-200 bg-gray-200 p-3 justify-center hover:bg-gray-300 rounded-2xl flex flex-col`}
 
-                        onClick={handleClick}
+                        
                     >
                         {/* Available on all Platforms */}
                         <div>
@@ -92,7 +89,7 @@ const Features = () => {
                   src={hoemPageImg}></img>
                  </div>
             </div>
-        </div>
+        </section>
     )
 }
 
