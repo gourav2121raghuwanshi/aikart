@@ -40,12 +40,12 @@ const NavBar = () => {
         <div className='flex flex-row gap-3    items-center'>
           <div className='hidden sm:flex flex-row'>
             <Link to={'sign-in'} >
-              <div className='font-semibold text-blue-300' >   Sign in</div>
+              <div className='font-semibold text-blue-400' >   Sign in</div>
             </Link>
           </div>
           <div className='hidden sm:block'>
             <Link to={'sign-up'} >
-              <div className=' px-3 py-1  rounded-xl bg-blue-300 text-white font-semibold'> Sign up</div>
+              <div className=' px-3 py-1  rounded-xl bg-blue-400 text-white font-semibold'> Sign up</div>
             </Link>
           </div>
           {/* dropdown */}
