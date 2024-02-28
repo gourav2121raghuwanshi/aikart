@@ -1,6 +1,8 @@
 const express = require('express')
 const cookieParser = require('cookie-parser');
 const authRouter = require('./routes/authRoutes.js');
+const userRouter=require("./routes/userRoutes.js");
+
 const aiRoutes = require('./routes/aiRoutes.js');
 const dbConnect=require('./utils/databaseConnect.js');
 const upload = require('./utils/fileupload.js');
@@ -18,6 +20,7 @@ app.use(cors());
 app.use(express.static("aikart/backend/public"));
 
 app.use('/api/auth', authRouter);
+app.use('/api/user', userRouter);
 
 app.use('/ai', aiRoutes);
 
