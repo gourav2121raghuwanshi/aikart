@@ -20,7 +20,7 @@ const NavBar = () => {
 
   return (
     <nav className='w-full z-10 mx-auto mt-2  fixed'>
-      <div className='flex flex-row justify-between w-11/12 mx-auto bg-gray-800 rounded-full px-3 py-2 sm:py-3 sm:p-4 shadow-lg'>
+      <div className='flex flex-row justify-between w-11/12 mx-auto rounded-full px-3 py-2 sm:py-3 sm:p-4 shadow-lg' style={{background:"rgba(4, 4, 19, 0.6)", backdropFilter:"blur(20px)"}}>
         <div className='flex flex-row gap-3 items-center'>
           <Link to="/"
             onClick={closeDropdown}>
@@ -31,13 +31,10 @@ const NavBar = () => {
           </Link>
 
           <button className='hidden hover:cursor-pointer text-white sm:block'>
-            <Link to='/features'  >Features</Link>
+            <Link to='/marketplace'  >Marketplace</Link>
           </button>
           <button className='hidden hover:cursor-pointer text-white sm:block'>
-            <Link to='/testimonials' >Testimonials</Link>
-          </button>
-          <button className='hidden hover:cursor-pointer text-white sm:block'>
-            <Link to='/faq' >FAQ</Link>
+            <Link to='/create' >Create</Link>
           </button>
 
 
@@ -87,20 +84,15 @@ const NavBar = () => {
               <div className="origin-top-right flex flex-col gap-3 p-4 absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                 <div className='flex flex-col gap-3'>
                   <Link
-                    to={'/features'}
+                    to={'/marketplace'}
                     onClick={closeDropdown}>
-                    Features
+                    Marketplace
                   </Link>
                   <Link
                     // to={'#testimonials'}
-                    to={'/testimonials'}
+                    to={'/create'}
                     onClick={closeDropdown}>
-                    Testimonials
-                  </Link>
-                  <Link
-                    to={'/faq'}
-                    onClick={closeDropdown}>
-                    FAQ
+                    create
                   </Link>
 
                 </div>
