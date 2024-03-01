@@ -144,7 +144,7 @@ const ProfilePage = () => {
                     hidden
                 />
                 <img
-                    src={formData.avatar || currentUser.avatar}
+                    src={formData?.avatar || currentUser?.avatar}
                     onClick={() => fileRef.current.click()}
                     alt="profile image"
                     loading='lazy'

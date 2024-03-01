@@ -23,7 +23,8 @@ const Publish = ({data}) => {
         Object.keys(newData).forEach(key=>{
             formD.append(key, newData[key]);
         })
-
+        document.getElementById("publish").style.display = "none";
+        
         axios.post("http://localhost:3000/ai/publish", formD)
         .then(res => { 
             console.log(res.data)
