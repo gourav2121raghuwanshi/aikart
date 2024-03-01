@@ -53,8 +53,8 @@ exports.getCurrentratingAndReview = async (req, res) => {
 
 exports.UpdateratingAndReview = async (req, res) => {
     try {
-        const { id, review } = req.body;
-        console.log(review);
+        const { id, review } =  req.body;
+         console.log(review);
 
         const existingReview = await RatingAndReview.findOne({ user: new mongoose.Types.ObjectId(id) });
         if (!existingReview) {

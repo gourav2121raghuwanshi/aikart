@@ -3,7 +3,6 @@ const router = express.Router();
 const {updateUser,deleteUser ,getUser} = require('../controllers/userControllers.js'); // Import the correct function
 const {verifyToken} = require('../utils/verifyUser')
 const {ratingAndReview,getAllRatingAndReviews,getCurrentratingAndReview,UpdateratingAndReview}=require("../controllers/RatingAndReviewController.js");
-
 const {initDB, getMarket1} = require("../controllers/MarketController");
 
 router.post('/newmarket', initDB);

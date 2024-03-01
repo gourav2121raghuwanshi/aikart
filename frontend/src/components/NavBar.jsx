@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { current } from '@reduxjs/toolkit';
 
 
 const NavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const { currentUser } = useSelector(state => state.user);
-  const navigate = useNavigate();
+  
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);

@@ -6,8 +6,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const Testimonials = () => {
   const [reviewData, setReviewData] = useState([]);
-  
-  useEffect(() => {
+   
+  useEffect(() =>  {
     const getReviews = async () => {
       try {
         const res = await axios.get(`/api/user/getReviews`);

@@ -29,6 +29,7 @@ const FAQ = () => {
               ) : (
                 <SlArrowDown className="text-black ml-2" />
               )}
+              
             </div>
             {activeAnswer === faq.id && (
               <div className="answer px-4 bg-gray-700 text-white  py-2 rounded-xl">
