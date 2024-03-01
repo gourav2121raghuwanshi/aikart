@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { current } from '@reduxjs/toolkit';
 
 
 const NavBar = () => {
@@ -18,6 +19,7 @@ const NavBar = () => {
     setDropdownOpen(false);
   };
 
+  
   return (
     <nav className='w-full z-10 mx-auto   fixed'>
       <div className='flex flex-row justify-between mx-auto bg-gray-800  p-3 sm:py-5 sm:p-6 shadow-lg'>

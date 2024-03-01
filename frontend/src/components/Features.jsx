@@ -131,7 +131,7 @@ const Features = () => {
                         </div>
                         <div className='flex flex-col justify-center gap-1 max-w-[85%] mx-auto'>
                             <span
-                                className='text-lg font-semibold'>
+                                className='text-lg font-semibold text-gray-700'>
                                 {image === 'one' ?
                                     "Dashboard" : (image === 'two' ?
                                         "Mobile integration" : "Available on all Platforms")}

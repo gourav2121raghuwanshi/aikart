@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className='w-full bg-gray-800 absolute '>
+    <div className='w-full bg-gray-800  '>
     <div className='w-11/12 mx-auto text-white sm:p-8  p-4 flex flex-row justify-between items-center'>
     <span className='sm:text-xl text-lg'> © Ai-Kart 2024.<br/> All rights reserved.</span>
     <div className='flex flex-col sm:gap-3 gap-1'>

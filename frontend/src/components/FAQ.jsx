@@ -19,11 +19,11 @@ const FAQ = () => {
       <div className='text-3xl font-bold text-gray-700 mt-5 mb-8 sm:text-center'>
         Frequently asked questions
       </div>
-      <div className="faq-container flex flex-col ">
+      <div className="faq-container flex flex-col gap-2">
         {faqData.map((faq) => (
-          <div key={faq.id} className='flex flex-col gap-1 py-2 border-b-2 border-gray-700 bg-gray-300  border-opacity-30  px-4 rounded-xl'>
-            <div className="question flex flex-row justify-between   hover:bg-gray-200 px-4 py-2 rounded-xl  " onClick={() => toggleAnswer(faq.id)}>
-              <span className='text-gray-600 '>{faq.question}</span>
+          <div key={faq.id} className='flex flex-col gap-1 py-2 border-b-2 border-gray-700 bg-[#999DAA] border-opacity-30  px-4 rounded-xl'>
+            <div className="question flex flex-row justify-between   hover:bg-gray-300 px-4 py-2 rounded-xl  " onClick={() => toggleAnswer(faq.id)}>
+              <span className='text-black '>{faq.question}</span>
               {activeAnswer === faq.id ? (
                 <SlArrowUp className="text-black ml-2" />
               ) : (
