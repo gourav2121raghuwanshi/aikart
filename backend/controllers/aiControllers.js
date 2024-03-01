@@ -3,7 +3,7 @@ const { errorHandler } = require('../utils/error.js');
 const fs = require("fs");
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "AIzaSyBJF71Zvsclw6elAdcoWQEsfpnWKSx0Dy8");
 
 async function text_to_text(prompt) {
     console.log("prompt",prompt);
