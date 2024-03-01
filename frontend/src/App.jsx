@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx"
 import TextToText from "./aiComponents/TextToText.jsx";
 import MarketPlace from "./pages/MarketPlace.jsx";
+import New from "./pages/New.jsx";
 
 export default function App() {
   
@@ -26,6 +27,7 @@ export default function App() {
       </Route>
       <Route path='/create' element={<CreateApps />} />
       <Route path='/studio' element={<ImageForm />} />
+      <Route path='/new' element={<New />}/>
     </Routes>
   </BrowserRouter>
   );

@@ -7,13 +7,13 @@ import MediaCard from './card';
 const MarketPlace = () => {
     const { currentUser } = useSelector(state => state.user);
     const [market, setMarket] = useState([]);
+    let link = "/new"; 
 
     useEffect(() => {
         const getMarket = async () => {
           try {
             const res = await axios.get(`/api/user/getmarket1`);
             const data = await res.data;
-            console.log(data);
             setMarket(data);
           } catch (err) {
             console.log("cannot get market ");
@@ -21,20 +21,22 @@ const MarketPlace = () => {
         };
         getMarket();
     }, []);
-
-    
-            
-        
+   
+    if(currentUser === null){
+        link = '/sign-in';
+    }        
 
   return (
     <div id='marketplace' style={{backgroundColor:"black"}}>
+        {console.log(currentUser)}
         <div style={{position:"absolute", top:"80px", display:"flex", flexWrap:"wrap"}}>
             {
                 market && 
                 market.map((curr) => (
-                    <div style={{padding:12, paddingLeft:20}}>
+                    <a href={link}><div style={{padding:12, paddingLeft:20}}>
                         <MediaCard key={curr._id} Title={curr.title} desc={curr.description} imgUrl={curr['imageUrl']} />
                     </div>
+                    </a>
                 ))
             }
         </div>
