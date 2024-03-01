@@ -4,7 +4,7 @@ import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
 import { Link } from 'react-router-dom'
-// import { useState } from 'react'
+import Footer from '../components/Footer'
 const HomePage = () => {
 
   
@@ -12,7 +12,7 @@ const HomePage = () => {
     <div className='w-full'>
       <div className='w-11/12  pt-24 mx-auto'>
 
-        <div className='w-11/12 mt-5 mx-auto bg-gray-100 rounded-xl p-8'>
+        <div className='w-11/12 mt-5 mx-auto rounded-xl p-8'>
           <div className='mx-auto text-center w-full'>
             <span className='font-bold  text-gray-600 sm:text-6xl text-5xl  sm:inline block'>Our latest </span>
           
@@ -28,10 +28,10 @@ const HomePage = () => {
           </div>
          
         </div>
-        <div className='w-full mt-5 mb-3 max-h-[900px]'>
+        <div className='w-full flex justify-center mt-5 mb-3 max-h-[900px]'>
           <img
-            style={{ maxHeight: '900px' }}
-            className='rounded-lg shadow-lg shadow-gray-600 max-h-[900px]'
+            style={{ maxWidth: '900px', width:"90%"}}
+            className='rounded-lg shadow-lg shadow-blue-200 max-h-[900px]'
             loading='lazy'
             src={homePageImg}
             alt='Description'
@@ -48,7 +48,7 @@ const HomePage = () => {
       <Testimonials/>
       {/* FAQ page */}
       <FAQ/>
-
+      <Footer />
     </div>
   )
 }
