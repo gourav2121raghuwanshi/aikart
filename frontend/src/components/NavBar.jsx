@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const NavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const { currentUser } = useSelector(state => state.user);
-  const navigate = useNavigate();
+  
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -18,6 +18,7 @@ const NavBar = () => {
     setDropdownOpen(false);
   };
 
+  
   return (
     <nav className='w-full z-10 mx-auto   fixed'>
       <div className='flex flex-row justify-between mx-auto bg-gray-800  p-3 sm:py-5 sm:p-6 shadow-lg'>

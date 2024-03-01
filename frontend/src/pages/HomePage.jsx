@@ -16,14 +16,14 @@ const HomePage = () => {
           <div className='mx-auto text-center w-full'>
             <span className='font-bold  text-gray-600 sm:text-6xl text-5xl  sm:inline block'>Our latest </span>
           
-            <span className='text-blue-400   font-bold sm:text-6xl text-5xl sm:inline block'>products</span>
+            <span className='text-blue-500   font-bold sm:text-6xl text-5xl sm:inline block'>products</span>
             <p className='mx-auto text-gray-700 mt-2'>
               Explore our cutting-edge dashboard, delivering high-quality solutions tailored to your needs.<br/>
               Elevate your experience with top-tier features and services.
             </p>
             <Link className='text-blue-500 hover:underline hover:cursor-pointer text-center' 
           to={'/sign-up'}>
-          <span className='text-start'>Get Started...</span></Link>
+          <span  className='text-start'>Get Started...</span></Link>
 
           </div>
          
