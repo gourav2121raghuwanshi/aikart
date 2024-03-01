@@ -9,7 +9,7 @@ import PrivateRoute from "./components/PrivateRoute.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx"
 import TextToText from "./aiComponents/TextToText.jsx";
 import TextToImage from "./aiComponents/TextToImage.jsx";
-
+import About from "./components/About.jsx";
 import MarketPlace from "./pages/MarketPlace.jsx";
 import New from "./pages/New.jsx";
 import ReviewPage from "./pages/ReviewPage.jsx";
@@ -23,7 +23,8 @@ export default function App() {
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/sign-in' element={<LoginPage />} />
-      <Route path='/sign-up' element={<SignupPage />} />
+      <Route path='/sign-in' element={<LoginPage />} />
+      <Route path='/about' element={<About />} />
       <Route path='/marketplace' element={<MarketPlace />}/>
       <Route element={<PrivateRoute />}>
         <Route path='/profile' element={<ProfilePage />} />   
