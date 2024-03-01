@@ -1,6 +1,9 @@
 import React from 'react'
 import dashboard from "../assets/dashboard.svg"
-import hoemPageImg from "../assets/homePageImg.jpg"
+import hoemPageImg from "../assets/homePageImg.jpg";
+// import image1 from "../assets/image1.png";
+// import image2 from "../assets/image2.jpg";
+
 
 const Features = () => {
     
@@ -37,9 +40,7 @@ const Features = () => {
                     </div>
                     {/*  */}
                     <div
-                        className={`hover:scale-95 transition-all duration-200 bg-gray-200 p-3 justify-center hover:bg-gray-300 rounded-2xl flex flex-col`}
-
-                     
+                        className={`hover:scale-95 transition-all duration-200 bg-gray-200 p-3 justify-center hover:bg-gray-300 rounded-2xl flex flex-col`}    
                     >
                         {/* mobile integration */}
                         <div>
@@ -94,3 +95,4 @@ const Features = () => {
 }
 
 export default Features
+
