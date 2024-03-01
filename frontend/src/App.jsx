@@ -27,7 +27,8 @@ export default function App() {
       <Route path='/marketplace' element={<MarketPlace />}/>
       <Route element={<PrivateRoute />}>
         <Route path='/profile' element={<ProfilePage />} />   
-        <Route path='/create/text-to-text' element={<TextToText />} /> 
+        <Route path='/create/text-to-text' element={<TextToText />} />
+        <Route path='/create/text-to-text' element={<TextToText />} />
         <Route path='/rate/:id' element={<ReviewPage />}/>    
         <Route path='/create/text-to-image' element={<TextToImage />} />   
       </Route>

@@ -56,6 +56,7 @@ function TextToText() {
     obj["model"] = "text-to-text"
     obj["prompt"] = prompt;
     obj["texts"] = [...inputValues]
+    obj["inputs"] = "text"
     console.log(obj);
     setfinal(obj);
   }

@@ -4,6 +4,7 @@ const { execute, testRun  } = require('../controllers/aiControllers.js');
 const {storage} = require('../utils/cloudinary.js');
 const multer = require('multer');
 const upload = multer({storage});
+const User = require('../models/UserModel.js')
 
 const Prompt = require('../models/promptModel.js')
 
@@ -19,6 +20,15 @@ router.post('/publish', upload.single('avatar'), async(req, res) => {
     const result = await Prompt.create({
         userid, model, prompt, texts, title, description, howtouse, avatar:avatar
     })
+    if(userid){
+        const user = await User.findById(userid);
+        if(!user.apps){
+            user.apps = [result.id];
+        }else{
+            user.apps.push(result.id);
+        }
+        await user.save();
+    }
     console.log(result);
     return res.json({message : "file successfully uploaded", id: result.id})
 });
