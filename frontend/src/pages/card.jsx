@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 export default function MediaCard({Title, desc, imgUrl}) {
   return (
 <div>
-    <Card sx={{ width : 370, height:430, border:"2px solid black", borderRadius:"10px"}}>
+    <Card sx={{ width : 370, height:430, border:"2px solid black", borderRadius:"10px", background:"#C6C6C6"}}>
 
       <CardMedia
         sx={{ height: 240 }}
@@ -25,7 +25,7 @@ export default function MediaCard({Title, desc, imgUrl}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Check Here</Button>
       </CardActions>
     </Card>
     </div>

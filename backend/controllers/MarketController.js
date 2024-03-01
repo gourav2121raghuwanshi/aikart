@@ -23,3 +23,14 @@ exports.getMarket1 = async(req, res) => {
         res.status(400).json("Error Occured");
     }
 }
+exports.getMarket2 = async(req, res) => {
+    try {
+        const {id} = req.params.id;
+        const market = await marketPlace.findById({id});
+        res.status(200).json(market);
+    }
+    catch(err) {
+        console.log(err);
+        res.status(400).json("Error Occured");
+    }
+}

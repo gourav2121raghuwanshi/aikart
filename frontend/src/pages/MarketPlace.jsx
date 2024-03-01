@@ -7,7 +7,7 @@ import MediaCard from './card';
 const MarketPlace = () => {
     const { currentUser } = useSelector(state => state.user);
     const [market, setMarket] = useState([]);
-    let link = "/new"; 
+    let y = true; 
 
     useEffect(() => {
         const getMarket = async () => {
@@ -23,7 +23,7 @@ const MarketPlace = () => {
     }, []);
    
     if(currentUser === null){
-        link = '/sign-in';
+        y = false;
     }        
 
   return (
@@ -33,7 +33,8 @@ const MarketPlace = () => {
             {
                 market && 
                 market.map((curr) => (
-                    <a href={link}><div style={{padding:12, paddingLeft:20}}>
+                    <a href={y ?`/market/${curr._id}` : '/sign-in'}>
+                      <div style={{padding:12, paddingLeft:20}}>
                         <MediaCard key={curr._id} Title={curr.title} desc={curr.description} imgUrl={curr['imageUrl']} />
                     </div>
                     </a>
