@@ -42,8 +42,8 @@ async function image_to_text() {
 
 
 let context = {
-    "text_to_text": text_to_text,
-    "image_to_text": image_to_text
+    "text-to-text": text_to_text,
+    "image-to-text": image_to_text
 }
 
 async function Evaluate(fn, arg){
@@ -71,4 +71,16 @@ exports.execute = async (req, res, next) => {
     }
     console.log("\nOutput : ", out);
     return res.json(out);
+}
+
+exports.testRun = async (req, res, next) =>{
+    const obj = req.body;
+    var arg = obj.prompt + "\n";
+    for(var txt of obj.texts){
+        arg += txt["prefix"] + " : " + txt["value"] + "\n";
+    }
+    console.log(arg);
+
+    var result = await context[obj.model].apply(context, [arg]);
+    return res.json(result)
 }

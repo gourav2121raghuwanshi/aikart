@@ -6,7 +6,7 @@ const ratAndRevSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
-    rating: {
+    rating:  {
         type: Number,
     },
     review: {
