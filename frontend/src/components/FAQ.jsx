@@ -31,7 +31,7 @@ const FAQ = () => {
               )}
             </div>
             {activeAnswer === faq.id && (
-              <div className="answer px-4 py-2 text-black">
+              <div className="answer px-4 bg-gray-700 text-white  py-2 rounded-xl">
                 {faq.answer}
               </div>
             )}

@@ -19,8 +19,8 @@ const NavBar = () => {
   };
 
   return (
-    <nav className='w-full z-10 mx-auto mt-2  fixed'>
-      <div className='flex flex-row justify-between w-11/12 mx-auto bg-gray-800 rounded-full px-3 py-2 sm:py-3 sm:p-4 shadow-lg'>
+    <nav className='w-full z-10 mx-auto   fixed'>
+      <div className='flex flex-row justify-between mx-auto bg-gray-800  p-3 sm:py-5 sm:p-6 shadow-lg'>
         <div className='flex flex-row gap-3 items-center'>
           <Link to="/"
             onClick={closeDropdown}>
@@ -124,11 +124,6 @@ const NavBar = () => {
                     Sign in
                   </Link>
                 </div>}
-
-
-
-
-
               </div>
             )}
           </div>
