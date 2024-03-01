@@ -3,13 +3,11 @@ import wesiteLogo from "../assets/wesiteLogo.svg"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 
 const NavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const { currentUser } = useSelector(state => state.user);
-  
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
