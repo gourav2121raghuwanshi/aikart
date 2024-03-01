@@ -376,7 +376,7 @@ const Testimonials = () => {
   };
 
   // Adjust the number of slides based on screen size
-  if (window.innerWidth >= 1024) {
+  if (window.innerWidth >= 1300) {
     settings.slidesToShow = 3;
   } else if (window.innerWidth >= 768) {
     settings.slidesToShow = 2;
@@ -385,16 +385,19 @@ const Testimonials = () => {
   }
 
   return (
-    <div id='testimonials' className='pt-24 w-11/12 mx-auto mb-10'>
+    <div id='testimonials' className='pt-20 w-11/12 mx-auto mb-10'>
       <div className='text-3xl sm:text-center font-bold text-gray-700 mt-6'>Testimonials</div>
       <p className='text-gray-600 my-2 sm:text-center'>
         Here you can provide a brief overview of the key features of the product. For example, you could list the number of features, the types of features, add-ons, or the benefits of the features.
       </p>
       <Slider {...settings}>
-        {reviewData &&
+        {
+        
+          reviewData &&
+       
           reviewData.map((review) => (
             <div key={review._id} className='mb-3'>
-              <div className='flex flex-col gap-3 max-w-[440px]  mx-auto px-4 py-6 bg-gray-300 rounded-2xl '>
+              <div className='flex flex-col gap-3 max-w-[400px]  mx-auto px-4 py-6 bg-gray-300 rounded-2xl '>
                 <div className='flex flex-col items-center justify-evenly gap-3'>
                   <img
                     src={review.user.avatar}
@@ -408,9 +411,12 @@ const Testimonials = () => {
                     ? `${review.review.substring(0, 200)}...`
                     : review.review}
                 </p>
+                
               </div>
             </div>
-          ))}
+            
+          ))
+          }
       </Slider>
     </div>
   );
