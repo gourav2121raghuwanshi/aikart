@@ -33,13 +33,10 @@ const NavBar = () => {
           </Link>
 
           <button className='hidden hover:cursor-pointer text-white sm:block'>
-            <Link to='/features'  >Features</Link>
+            <Link to='/marketplace'  >Marketplace</Link>
           </button>
           <button className='hidden hover:cursor-pointer text-white sm:block'>
-            <Link to='/testimonials' >Testimonials</Link>
-          </button>
-          <button className='hidden hover:cursor-pointer text-white sm:block'>
-            <Link to='/faq' >FAQ</Link>
+            <Link to='/create' >Create</Link>
           </button>
 
 
@@ -89,20 +86,15 @@ const NavBar = () => {
               <div className="origin-top-right flex flex-col gap-3 p-4 absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                 <div className='flex flex-col gap-3'>
                   <Link
-                    to={'/features'}
+                    to={'/marketplace'}
                     onClick={closeDropdown}>
-                    Features
+                    Marketplace
                   </Link>
                   <Link
                     // to={'#testimonials'}
-                    to={'/testimonials'}
+                    to={'/create'}
                     onClick={closeDropdown}>
-                    Testimonials
-                  </Link>
-                  <Link
-                    to={'/faq'}
-                    onClick={closeDropdown}>
-                    FAQ
+                    create
                   </Link>
 
                 </div>

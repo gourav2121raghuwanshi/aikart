@@ -194,7 +194,7 @@ const ProfilePage = () => {
         className='text-green-600 font-semibold sm:text-2xl text-lg mt-7'>
         {updateSuccess ? 'User is Updated Successfully!!' : ""}
       </p>
-
+    
         </div>
     )
 }

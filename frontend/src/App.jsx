@@ -3,13 +3,14 @@ import LoginPage from "./pages/LoginPage";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar.jsx";
-import Features from "./components/Features.jsx";
-import Testimonials from "./components/Testimonials.jsx";
-import FAQ from "./components/FAQ.jsx";
-import ProfilePage from "./pages/ProfilePage.jsx";
-import Footer from "./components/Footer.jsx";
+import CreateApps from "./pages/CreateApps.jsx";
+import ImageForm from "./pages/studio.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-import About from "./components/About.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx"
+import TextToText from "./aiComponents/TextToText.jsx";
+import MarketPlace from "./pages/MarketPlace.jsx";
+import New from "./pages/New.jsx";
+
 export default function App() {
   
   return (
@@ -19,18 +20,15 @@ export default function App() {
       <Route path='/' element={<HomePage />} />
       <Route path='/sign-in' element={<LoginPage />} />
       <Route path='/sign-up' element={<SignupPage />} />
-      <Route path='/features' element={<Features/>} />
-      <Route path='/testimonials' element={<Testimonials/>} />
-      <Route path='/faq' element={<FAQ/>} />
-      <Route path='/faq' element={<ProfilePage/>} />
-      <Route path='/about' element={<About/>} />
-
+      <Route path='/marketplace' element={<MarketPlace />}/>
       <Route element={<PrivateRoute />}>
-        <Route path='/profile' element={<ProfilePage />} />      
+        <Route path='/profile' element={<ProfilePage />} />   
+        <Route path='/create/text-to-text' element={<TextToText />} />   
       </Route>
-      
+      <Route path='/create' element={<CreateApps />} />
+      <Route path='/studio' element={<ImageForm />} />
+      <Route path='/new' element={<New />}/>
     </Routes>
-    <Footer />
   </BrowserRouter>
   );
 }
