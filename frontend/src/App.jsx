@@ -12,6 +12,8 @@ import TextToImage from "./aiComponents/TextToImage.jsx";
 
 import MarketPlace from "./pages/MarketPlace.jsx";
 import New from "./pages/New.jsx";
+import ReviewPage from "./pages/ReviewPage.jsx";
+
 
 export default function App() {
   
@@ -25,12 +27,13 @@ export default function App() {
       <Route path='/marketplace' element={<MarketPlace />}/>
       <Route element={<PrivateRoute />}>
         <Route path='/profile' element={<ProfilePage />} />   
-        <Route path='/create/text-to-text' element={<TextToText />} />   
+        <Route path='/create/text-to-text' element={<TextToText />} /> 
+        <Route path='/rate/:id' element={<ReviewPage />}/>    
         <Route path='/create/text-to-image' element={<TextToImage />} />   
       </Route>
       <Route path='/create' element={<CreateApps />} />
       <Route path='/studio' element={<ImageForm />} />
-      <Route path='/new' element={<New />}/>
+      <Route path='/market/:id' element={<New />}/>
     </Routes>
   </BrowserRouter>
   );
