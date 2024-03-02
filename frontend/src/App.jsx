@@ -14,6 +14,7 @@ import MarketPlace from "./pages/MarketPlace.jsx";
 import New from "./pages/New.jsx";
 import ReviewPage from "./pages/ReviewPage.jsx";
 import UserApp from "./pages/UserApp.jsx";
+import Text_ImageToText from "./aiComponents/Text_ImageToText.jsx"
 
 
 export default function App() {
