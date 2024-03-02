@@ -17,11 +17,10 @@ Ai-kart is a web app that allow users to createe awsome✨ &amp; and cool custom
  ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 <br>
 
-<a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
-<a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
-<a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
-<a href="https://github.com/Ayushparikh-code"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
-<a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?v=103"></a>
+<a href="https://github.com/chaman56/aikart"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://github.com/chaman56/aikart"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
+<a href="https://github.com/chaman56/aikart"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
+<a href="https://github.com/chaman56/aikart"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
 <br>
 <br>
 </div>
