@@ -15,6 +15,7 @@ const MarketPlace = () => {
             const res = await axios.get(`/api/user/getmarket1`);
             const data = await res.data;
             setMarket(data);
+            console.log(data);
           } catch (err) {
             console.log("cannot get market ");
           }
@@ -27,8 +28,7 @@ const MarketPlace = () => {
     }        
 
   return (
-    <div id='marketplace' style={{backgroundColor:"black"}}>
-        {console.log(currentUser)}
+    <div id='marketplace' >
         <div style={{position:"absolute", top:"80px", display:"flex", flexWrap:"wrap"}}>
             {
                 market && 

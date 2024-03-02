@@ -137,7 +137,7 @@ const ProfilePage = () => {
             <div className='flex justify-between items-center'>
                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 <div><h1 className='sm:text-4xl text-2xl text-gray-700 font-bold text-center my-7 '>Profile</h1></div>
-                <Link to={'/user-apps/'+currentUser._id} className=' bg-green-800 text-white px-2 py-1 rounded'>Your Apps</Link>
+                <Link to={`/user-apps/${currentUser._id}`} className=' bg-green-800 text-white px-2 py-1 rounded'>Your Apps</Link>
             </div>
             <form onSubmit={handleSubmit} className='flex flex-col max-w-2xl  gap-6'>
                 <input
