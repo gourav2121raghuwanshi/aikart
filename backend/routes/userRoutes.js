@@ -10,8 +10,8 @@ router.get('/getmarket1',getMarket1);
 
 router.post("/createReviews",ratingAndReview);
 router.get("/getReviews",getAllRatingAndReviews);
-router.post("/ReviewOfCurrentUser",getCurrentratingAndReview);
-router.post("/updateReview",UpdateratingAndReview);
+router.get("/ReviewOfCurrentUser/:id/:appId",getCurrentratingAndReview);
+router.post("/updateReview/:id/:appId",UpdateratingAndReview);
 
 router.post('/update/:id',verifyToken, updateUser);
 router.delete('/delete/:id',verifyToken, deleteUser);

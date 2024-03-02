@@ -12,6 +12,9 @@ const ratAndRevSchema = new mongoose.Schema({
     review: {
         type: String,
         trim: true,
+    },
+    appId :{
+        type: String
     }
 
 })

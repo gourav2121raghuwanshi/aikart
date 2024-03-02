@@ -60,7 +60,7 @@ const Testimonials = () => {
                   <span className='text-gray-800 text-xl'>{review?.user?.username}</span>
                 </div>
                 <p className='text-gray-600'>
-                  {review?.review.length > 100
+                  {review?.review?.length > 100
                     ? `${review?.review.substring(0, 200)}...`
                     : review?.review}
                 </p>
