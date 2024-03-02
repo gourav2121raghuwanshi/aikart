@@ -3,6 +3,7 @@ Ai-kart is a web app that allow users to createe awsome✨ &amp; and cool custom
 <h1 align="center">Ai-Kart</h1>  
 
 
+<div align="center">  
  ### Technologies ⚡
  
  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-thebadge&logo=react&logoColor=%2361DAFB)
@@ -16,7 +17,6 @@ Ai-kart is a web app that allow users to createe awsome✨ &amp; and cool custom
  ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 <br>
 
-<div align="center">  
 <a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
 <a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
 <a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
