@@ -86,9 +86,12 @@ exports.testRun = async (req, res, next) =>{
         arg += txt["prefix"] + " : " + txt["value"] + "\n";
     }
     console.log(arg);
-
+    try{
     var result = await context[obj.model].apply(context, [arg]);
-    return res.json(result)
+        return res.json(result)
+    } catch(err){
+        return res.json("Internal Server Error : \n"+ err);
+    }
 }
 
 exports.testRunImg = async(req,res,next) => {
@@ -103,8 +106,11 @@ exports.testRunImg = async(req,res,next) => {
         imageParts.push(img);
     }
 
-
-    var result = await context[obj.model].apply(context, [arg, imageParts]);
-    console.log(result);
-    return res.json(result);
+    try {
+        var result = await context[obj.model].apply(context, [arg, imageParts]);
+        console.log(result);
+        return res.json(result);
+    } catch(err){
+        return res.json("Internal Server Error : \n"+ err);
+    }
 }

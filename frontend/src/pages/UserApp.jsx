@@ -12,7 +12,7 @@ const UserApp = () => {
     useEffect(() => {
         const getMarket = async () => {
           try {
-            const res = await axios.get(`http://localhost:3000/api/user/getCurrUserMarket/${currentUser._id}`);
+            const res = await axios.get(`/ai/getuserprompts/${currentUser._id}`);
             const data = await res.data;
             setMarket(data);
             console.log(data);
@@ -32,7 +32,7 @@ const UserApp = () => {
                     market.map((curr) => (
                         <a href={`/market/${curr._id}`}>
                             <div style={{padding:12, paddingLeft:20}}>
-                                <MediaCard key={curr._id} Title={curr.title} desc={curr.description} imgUrl={curr['imageUrl']} />
+                                <MediaCard key={curr._id} Title={curr.title} desc={curr.description} imgUrl={curr['avatar']} />
                             </div>
                         </a>
                     ))

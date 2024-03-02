@@ -1,5 +1,5 @@
 import React from 'react'
-import homePageImg from "../assets/homePageImg.jpg"
+import homePageImg from '../assets/OIG4.jpg'
 import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
@@ -15,9 +15,8 @@ const HomePage = () => {
 
         <div className='w-11/12 mt-5 mx-auto rounded-xl p-8'>
           <div className='mx-auto text-center w-full'>
-            <span className='font-bold  text-gray-600 sm:text-6xl text-5xl  sm:inline block'>Our latest </span>
-
-            <span className='text-blue-500   font-bold sm:text-6xl text-5xl sm:inline block'>products</span>
+            <span className='text-blue-500   font-bold sm:text-6xl text-5xl sm:inline block'>Ai-Kart  </span>
+            <span className='font-bold  text-gray-600 sm:text-6xl text-5xl  sm:inline block'>App </span>
             <p className='mx-auto text-gray-700 mt-2'>
               Explore our cutting-edge dashboard, delivering high-quality solutions tailored to your needs.<br />
               Elevate your experience with top-tier features and services.

@@ -50,7 +50,7 @@ const Testimonials = () => {
         {
           reviewData && reviewData.map((review) => (
             <div key={review?._id} className='mb-3'>
-              <div className='flex flex-col gap-3 max-w-[400px] h-[260px]  mx-auto px-4 py-6 bg-gray-300 rounded-2xl '>
+              <div className='flex flex-col gap-3 max-w-[400px] h-[260px]  mx-auto px-4 py-6 bg-cyan-100 bg-indigo-300 rounded-2xl '>
                 <div className='flex flex-col items-center justify-evenly gap-3'>
                   <img
                     src={review?.user?.avatar}

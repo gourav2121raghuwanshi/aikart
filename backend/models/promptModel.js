@@ -6,13 +6,28 @@ const promptSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        model : String,
-        prompt : String,
-        texts : {
-            type: Array,
+        model : {
+            type : String,
+            required: true,
         },
-        title : String,
-        description : String,
+        prompt : String,
+        texts : [
+            {
+                prefix : String,
+                placeholder : String
+            }
+        ],
+        images : [
+            {placeholder : String}
+        ],
+        title :{
+            type :String,
+            required: true,
+        },
+        description : {
+            type : String,
+            required: true,
+        },
         howtouse : String,
         inputs : Array,
         avatar: {

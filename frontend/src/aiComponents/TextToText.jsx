@@ -56,7 +56,7 @@ function TextToText() {
     obj["model"] = "text-to-text"
     obj["prompt"] = prompt;
     obj["texts"] = [...inputValues]
-    obj["inputs"] = "text"
+    obj["inputs"] = ["text"]
     console.log(obj);
     setfinal(obj);
   }
@@ -68,7 +68,7 @@ function TextToText() {
 
   const handleRun = async () =>{
     setisRunning(true);
-    await fetch('http://localhost:3000/ai/testrun', {
+    await fetch('/ai/testrun', {
         method : 'POST',
         headers:{
             'Content-Type' : 'application/json',
@@ -98,9 +98,9 @@ function TextToText() {
 
 
   return (
-    <div className=' pt-20 bg-gray-900' style={{minHeight:"100vh"}}>
+    <div className=' pt-20 bg-gray-900 gradientbg' style={{minHeight:"100vh"}}>
             <div className='flex justify-center p-8 ' style={{minHeight:"calc(100vh - 80px)"}}>
-                <div className='min-w-[20rem] bg-gray-900 text-white rounded-2xl' style={{minWidth:"300px", maxWidth:"900px", width:"99%"}}>
+                <div className='min-w-[20rem] bg-slate-600 text-white rounded-2xl' style={{minWidth:"300px", maxWidth:"900px", width:"99%"}}>
                     {/* <div className='flex items-center h-10 px-6 rounded-t-2xl bg-gray-500'>
                         <button onClick={()=>AddInput()} className=' p-0.5 rounded-md px-2 bg-gray-400 hover:bg-gray-300'>Insert Input</button>
                     </div> */}
@@ -179,7 +179,7 @@ function TextToText() {
             </div>
             <div id='publish' className='' style={{display:'none', position:'absolute', top: "0px", left:"0px", width:'100vw', height:'100vh', background: 'rgba(0,0,0,0.4)'}}>
                 <div id='run' onClick={(e)=>handleClickOutside(e, 'publish')} className='flex items-center justify-center h-full'>
-                    <div id='runMain' className=' bg-neutral-700 rounded-xl pt-5' style={{height:'calc(100vh - 180px)',maxWidth:"900px", width:"90%"}}>
+                    <div id='runMain' className=' bg-slate-600 rounded-xl pt-5' style={{height:'calc(100vh - 180px)',maxWidth:"900px", width:"90%"}}>
                         <div className=' overflow-y-auto ' style={{height:"calc(100% - 30px)"}}>
                           <Publish data={final} />
                         </div>

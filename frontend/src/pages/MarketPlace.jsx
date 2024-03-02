@@ -12,7 +12,7 @@ const MarketPlace = () => {
     useEffect(() => {
         const getMarket = async () => {
           try {
-            const res = await axios.get(`/api/user/getmarket1`);
+            const res = await axios.get(`/ai/getprompts`);
             const data = await res.data;
             setMarket(data);
             console.log(data);
@@ -37,7 +37,7 @@ const MarketPlace = () => {
                     key={curr._id}
                      href={y ?`/market/${curr._id}` : '/sign-in'}>
                       <div style={{padding:12, paddingLeft:20}}>
-                        <MediaCard key={curr._id} Title={curr.title} desc={curr.description} imgUrl={curr['imageUrl']} />
+                        <MediaCard key={curr._id} Title={curr.title} desc={curr.description} imgUrl={curr['avatar']} />
                     </div>
                     </a>
                 ))

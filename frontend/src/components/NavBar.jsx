@@ -19,7 +19,7 @@ const NavBar = () => {
   
   return (
     <nav className='w-full z-10 mx-auto   fixed'>
-      <div className='flex flex-row justify-between mx-auto bg-gray-800  p-3 sm:py-5 sm:p-6 shadow-lg'>
+      <div className='flex flex-row justify-between mx-auto bg-blue-800  p-3 sm:py-5 sm:p-6 shadow-lg'>
         <div className='flex flex-row gap-3 items-center'>
           <Link to="/"
             onClick={closeDropdown}>
