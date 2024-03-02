@@ -3,11 +3,16 @@ Ai-kart is a web app that allow users to createe awsome✨ &amp; and cool custom
 <h1 align="center">Ai-Kart</h1>  
 
 <div align="center">  
-<a href="https://github.com/topics/html"><img alt="HTML" src="https://img.shields.io/badge/REACT%20-%23E34F26.svg?&style=for-the-badge"/></a>
-<a href="https://github.com/topics/css"><img alt="CSS" src="https://img.shields.io/badge/TAILWIND%20-%23E34F26.svg?&style=for-the-badge"/></a>
-<a href="https://github.com/topics/css"><img alt="CSS" src="https://img.shields.io/badge/NODE%20-%23E34F26.svg?&style=for-the-badge"/></a>
-<a href="https://github.com/topics/css"><img alt="CSS" src="https://img.shields.io/badge/EXPRESS%20-%23E34F26.svg?&style=for-the-badge"/></a>
-<a href="https://github.com/topics/javascript"><img alt="javascript" src="https://img.shields.io/badge/Javascript%20-%23E34F26.svg?&style=for-the-badge&logo=javascript&logoColor=white"/></a>
+ 
+ ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the badge&logo=react&logoColor=%2361DAFB)
+ ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+ ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+ ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+ ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+ ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+ ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+ ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+ ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 <br>
 <br>
 <a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
