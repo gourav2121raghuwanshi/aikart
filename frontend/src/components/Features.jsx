@@ -12,26 +12,25 @@ const Features = () => {
                 <div className='flex flex-1 flex-col gap-3'>
                     <div
 
-                        className='text-3xl font-bold text-gray-700'>
+                        className='text-3xl font-bold text-gray-700 mb-3'>
                         Product features
                     </div>
-                    <p className='text-gray-600'>Here you can provide a brief overview of the key features of the product. For example, you could
-                        list the number of features, the types of features, add-ons, or the benefits of the features.
-                    </p>
+                   
                     <div
                         onClick={() => setImage('one')}
                         className={`hover:scale-95 transition-all duration-200 bg-gray-200 p-3 justify-center hover:bg-gray-300 rounded-2xl flex flex-col`}
                     >
                         {/* dashboard */}
-                        <svg 
-                    className='h-[20px] w-[20px] '    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="dashboard"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M4 13h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zm0 8h6c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm10 0h6c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zM13 4v4c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1z"></path></svg>
+                        <svg
+                            className='h-[20px] w-[20px] ' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="dashboard"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M4 13h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zm0 8h6c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm10 0h6c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zM13 4v4c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1z"></path></svg>
 
                         <span
                             className='text-gray-600 font-semibold text-xl '
-                        >Dashboard
+                        >MarketPlace
                         </span>
                         <p className='text-gray-600'>
-                            This item could provide a snapshot of the most important metrics or data points related to the product.
+                            Welcome to our revolutionary AI Marketplace, where innovation meets accessibility! 
+                            Discover a world of limitless possibilities with our MERN stack-powered application enriched with cutting-edge AI/ML capabilities.
                         </p>
 
                     </div>
@@ -50,10 +49,10 @@ const Features = () => {
                         </div>
                         <span
                             className='text-gray-600 font-semibold text-xl '
-                        >Mobile integration
+                        >  Seamless Integration
                         </span>
                         <p className='text-gray-600'>
-                            This item could provide information about the mobile app version of the product.
+                        Our app ensures compatibility and interoperability, allowing you to extend the reach and impact of your creations.
                         </p>
 
                     </div>
@@ -74,19 +73,20 @@ const Features = () => {
                         </div>
                         <span
                             className='text-gray-600 font-semibold text-xl '
-                        >Available on all Platforms
+                        >Create Your own Apps
                         </span>
                         <p className='text-gray-600'>
-                            This item could let users know the product is avialable on all platforms, such as web mobile,and desktop. </p>
-
+                        Craft your own AI applications effortlessly! Whether it's diagnosing diseases from images or transforming text into insightful narratives,
+                         our platform puts the creative control in your hands. Shape the future of technology by bringing your ideas to life. </p>
                     </div>
 
                 </div>
                 {/* Part 2 */}
                 <div
-                    className='flex-1 py-16 flex flex-row items-center justify-center bg-gray-100 rounded-2xl '>
+      
+                    className='flex-1 py-16 flex flex-row items-center justify-center  rounded-2xl '>
                     <img
-                        className='max-w-[70%] rounded-xl'
+                        className='max-w-[60%] rounded-xl'
 
                         src={image === 'one' ? hoemPageImg : (image === 'two' ? image1 : image2)}></img>
                 </div>
@@ -95,33 +95,31 @@ const Features = () => {
                 <div>
                     <div
 
-                        className='text-3xl font-bold text-gray-700'>
+                        className='text-3xl font-bold text-gray-700 mb-3'>
                         Product features
                     </div>
-                    <p className='text-gray-600 pt-1 pb-4'>Here you can provide a brief overview of the key features of the product. For example, you could
-                        list the number of features, the types of features, add-ons, or the benefits of the features.
-                    </p>
+                    
                 </div>
                 <div className='flex flex-col gap-3'>
                     <div className='flex flex-wrap gap-3'>
                         <div
                             onClick={() => setImage('one')}
                             className='bg-blue-900  opacity-85 hover:opacity-100 text-white px-3 py-2  rounded-full'>
-                            Dashboard
+                            MarketPlace
                         </div>
                         <div
                             onClick={() => setImage('two')}
                             className='bg-blue-900 opacity-85 hover:opacity-100 text-white px-3 py-2  rounded-full'>
-                            Mobile integration
+                            Seamless Integration
                         </div>
                         <div
                             onClick={() => setImage('three')}
                             className='bg-blue-900 opacity-85 hover:opacity-100 text-white px-3 py-2  rounded-full'>
-                            Available on all Platforms
+                            Create Your own Apps
                         </div>
                     </div>
                     <div className='flex flex-col gap-2 bg-gray-200 rounded-xl p-3 shadow-lg shadow-gray-600'>
-                        <div className='max-w-[85%] mx-auto'  >
+                        <div className='max-w-[80%] mx-auto'  >
 
                             <img
                                 className=' rounded-xl'
@@ -129,19 +127,19 @@ const Features = () => {
                             >
                             </img>
                         </div>
-                        <div  className='flex flex-col justify-center gap-1 max-w-[85%] mx-auto'>
+                        <div className='flex flex-col justify-center gap-1 max-w-[85%] mx-auto'>
                             <span
                                 className='text-lg font-semibold text-gray-700'>
                                 {image === 'one' ?
-                                    "Dashboard" : (image === 'two' ?
-                                        "Mobile integration" : "Available on all Platforms")}
+                                    "MarketPlace" : (image === 'two' ?
+                                        "Seamless Integration" : "Create your own Apps")}
                             </span>
                             <span
                                 className='text-gray-600'>
                                 {image === 'one' ?
-                                    "This item could provide a snapshot of the most important metrics or data points related to the product." :
-                                    (image === 'two' ? "This item could provide information about the mobile app version of the product." :
-                                        "Here you can provide a brief overview of the key features of the product. For example, you could list the number of features, the types of features, add-ons, or the benefits of the features.")}
+                                    "Welcome to our revolutionary AI Marketplace, where innovation meets accessibility! Discover a world of limitless possibilities with our MERN stack-powered application enriched with cutting-edge AI/ML capabilities." :
+                                    (image === 'two' ? "Craft your own AI applications effortlessly! Whether it's diagnosing diseases from images or transforming text into insightful narratives, our platform puts the creative control in your hands. Shape the future of technology by bringing your ideas to life.     " :
+                                        " Our app ensures compatibility and interoperability, allowing you to extend the reach and impact of your creations.                      ")}
                             </span>
                         </div>
                     </div>
