@@ -175,7 +175,7 @@ function Text_ImageToText() {
                           <button onClick={() => handlePublish()} className=' px-2 pb-1 rounded bg-pink-300'>Publish</button>
                         </div>
                         <textarea name='prompt' value={prompt} onChange={(e)=>{setprompt(e.target.value)}} placeholder='Enter the prompt . . .' 
-                            className='bg-brand-amber-1 min-h-[8rem] w-full resize-none rounded border bg-slate-500 border-zinc-300/100 p-2 text-sm focus:border-black/30 focus:outline-none'>
+                            className='bg-brand-amber-1 min-h-[8rem] w-full resize-none rounded border bg-gray-500 border-zinc-300/100 p-2 text-sm focus:border-black/30 focus:outline-none'>
                         </textarea>
                         {divs.map((divIndex, index) => (
                             <div key={divIndex} className=' p-2 my-2 rounded border bg-gray-600 relative'>
@@ -187,14 +187,14 @@ function Text_ImageToText() {
                                     value={inputValues[index].prefix}
                                     onChange={(e) => handleInputChange(index, e)}
                                     placeholder ='Enter Prefix' type="text" 
-                                    className=' w-full mt-1 rounded p-1 bg-slate-500' 
+                                    className=' w-full mt-1 rounded p-1 bg-gray-500' 
                                 /><br/>
                                 <p><span className=' text-xs text-gray-300'>Placeholder for input box.</span></p>
                                 <input name='placeholder'
                                     value={inputValues[index].placeholder}
                                     onChange={(e) => handleInputChange(index, e)}
                                     placeholder='Enter Placeholder' type="text" 
-                                    className=' w-full mt-1 rounded p-1 bg-slate-500' 
+                                    className=' w-full mt-1 rounded p-1 bg-gray-500' 
                                 /><br/>
                             </div>
                         ))}
@@ -209,7 +209,7 @@ function Text_ImageToText() {
                                     value={inputImages[index].placeholder}
                                     onChange={(e) => handleImageInputChange(index, e)}
                                     placeholder='Enter the description of Image.' type="text" 
-                                    className=' w-full mt-1 rounded p-1 bg-slate-500' 
+                                    className=' w-full mt-1 rounded p-1 bg-gray-500' 
                                 /><br/>
                             </div>
                         ))}

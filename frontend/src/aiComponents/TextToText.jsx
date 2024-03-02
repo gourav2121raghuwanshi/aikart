@@ -105,12 +105,12 @@ function TextToText() {
                         <button onClick={()=>AddInput()} className=' p-0.5 rounded-md px-2 bg-gray-400 hover:bg-gray-300'>Insert Input</button>
                     </div> */}
                     <div id='inputs' className=' p-3' style={{minHeight:"calc(100%-2.5rem)"}}>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between py-1 pb-2'>
                           <p className='pb-2'>You can customise your prompts here.</p>
-                          <button onClick={() => handlePublish()} className=' px-2 pb-1 rounded bg-pink-300'>Publish</button>
+                          <button onClick={() => handlePublish()} className=' px-2 pb-1 rounded bg-green-500'>Publish</button>
                         </div>
                         <textarea name='prompt' value={prompt} onChange={(e)=>{setprompt(e.target.value)}} placeholder='example : You are an agent and you will be given the car name you have to output few car models with their details in the json object format with fields like model-name, engine, milage, power, and extra-features. ' 
-                            className='bg-brand-amber-1 min-h-[8rem] w-full resize-none rounded border bg-zinc-700 border-zinc-300/100 p-2 text-sm focus:border-black/30 focus:outline-none'>
+                            className='bg-brand-amber-1 min-h-[8rem] w-full resize-none rounded border  bg-gray-500  p-2 text-sm border-black/20 focus:border-black/30 focus:outline-none'>
                         </textarea>
                         {/* <div className=' p-2 my-2 rounded border bg-gray-600'>
                             <h2 className=' text-gray-400'>Input Field</h2>
@@ -130,14 +130,14 @@ function TextToText() {
                                     value={inputValues[index].prefix}
                                     onChange={(e) => handleInputChange(index, e)}
                                     placeholder ='Car Name' type="text" 
-                                    className=' w-full mt-1 rounded p-1 bg-slate-500' 
+                                    className=' w-full mt-1 rounded p-1 bg-gray-500' 
                                 /><br/>
                                 <p><span className=' text-xs text-gray-300'>Placeholder for input box.</span></p>
                                 <input name='placeholder'
                                     value={inputValues[index].placeholder}
                                     onChange={(e) => handleInputChange(index, e)}
                                     placeholder='Ferrari' type="text" 
-                                    className=' w-full mt-1 rounded p-1 bg-slate-500' 
+                                    className=' w-full mt-1 rounded p-1 bg-gray-500' 
                                 /><br/>
                             </div>
                         ))}

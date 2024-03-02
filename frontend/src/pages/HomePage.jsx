@@ -60,8 +60,8 @@ const HomePage = () => {
 
       <Testimonials />
       
-      <div className=' text-center pb-10'>
-        <a href={`/rate/${currentUser._id}`} className=' px-2 py-4 rounded-xl mb-5 bg-green-400 cursor-pointer'>Rate us!!</a>
+      <div className=' text-center pt-10'>
+        <a href={`/rate/${currentUser._id}`} className=' px-3 py-3 rounded-xl mb-5 bg-blue-700 text-white cursor-pointer'>Rate us!!</a>
       </div>
 
       <FAQ />

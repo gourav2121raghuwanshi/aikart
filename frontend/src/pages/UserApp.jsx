@@ -34,11 +34,10 @@ const UserApp = () => {
         <div id='user-app' >
             <div className='gradientbg' style={{position:"absolute", top:"80px", display:"flex", flexWrap:"wrap"}}>
                 {
-                    y && market && 
-                    market.map((curr) => (
-                        <a href={`/market/${curr._id}`}>
+                    y && market && market.map((curr) => (
+                        <a href={`/market/${curr.id}`}>
                             <div style={{padding:12, paddingLeft:20}}>
-                                <MediaCard key={curr._id} Title={curr.title} desc={curr.description} imgUrl={curr['avatar']} />
+                                <MediaCard key={curr.id} Title={curr.title} desc={curr.description} imgUrl={curr['avatar']} />
                             </div>
                         </a>
                     ))
