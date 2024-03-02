@@ -9,8 +9,7 @@ import Typography from '@mui/material/Typography';
 export default function MediaCard({Title, desc, imgUrl}) {
   return (
 <div>
-    <Card sx={{ width : 370, height:430, border:"2px solid black", borderRadius:"10px", background:"#C6C6C6"}}>
-
+    <Card className=' pb-2 ' sx={{ width :{md: 200, lg: 370},  borderRadius:"10px", background:"rgb(147 197 253)"}}>
       <CardMedia
         sx={{ height: 240 }}
         image={imgUrl}

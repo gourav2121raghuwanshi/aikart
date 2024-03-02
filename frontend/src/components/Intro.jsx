@@ -151,10 +151,6 @@ const Intro = () => {
                     </div>
                   </div>
               </div>
-              
-            </div>
-            <div className=' text-center pb-10'>
-              <a href={`/rate/${id}`} className=' px-2 py-4 rounded-xl mb-5 bg-green-400 cursor-pointer'>Rate us!!</a>
             </div>
         </div>
     </div>

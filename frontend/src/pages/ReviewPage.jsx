@@ -58,8 +58,8 @@ const ReviewPage = () => {
         };
 
     return (
-        <div>
-            <div className='mainForm' style={{position:"absolute" ,top:"23vh", left:"45vh"}}>
+        <div className=' flex justify-center items-center' style={{height:"100vh"}}>
+            <div className='mainForm gradientbg'>
                 <p style={{fontWeight:"bolder", fontSize:22, margin:"1rem"}}>Rate us : <Rating defaultValue={formData.rating} name="rating" value={formData.rating} size="large" onChange={handleChange}/></p>
                 <p style={{fontWeight:"bolder", fontSize:22, margin:"1rem"}}>Review Form :</p>
 

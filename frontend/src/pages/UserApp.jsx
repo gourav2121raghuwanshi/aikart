@@ -3,6 +3,7 @@ import axios from 'axios';
 import  { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import MediaCard from './card';
+import Footer from '../components/Footer';
 
 const UserApp = () => {
 
@@ -30,8 +31,8 @@ const UserApp = () => {
 
   return (
     <div>
-        <div id='user-app'>
-            <div style={{position:"absolute", top:"80px", display:"flex", flexWrap:"wrap"}}>
+        <div id='user-app' >
+            <div className='gradientbg' style={{position:"absolute", top:"80px", display:"flex", flexWrap:"wrap"}}>
                 {
                     y && market && 
                     market.map((curr) => (
@@ -45,11 +46,14 @@ const UserApp = () => {
                 {
                     
                     !y &&
-                    <div style={{display:"flex", justifyContent:"center", alignItems:"center", height:"100vh", margin:"auto"}}> 
-                        <div>You have not created any App</div> <br />
-                        <a href={`/create`} style={{background:"blue", height:20}}><button >Create one</button></a>
+                    <div className='flex justify-center items-center' style={{height:"100vh", width : "100vw"}}> 
+                        <div className=' '>
+                            <div className=' font-bold font text-gray-600' style={{fontSize:"3rem"}}>No Apps Created</div> <br />
+                            <a className=' py-2 px-4 rounded-lg bg-green-300' href={`/create`} style={{ height:20}}>+ Create App</a>
+                        </div>
                     </div>
                 }
+                <Footer />
             </div>
         </div>
     </div>

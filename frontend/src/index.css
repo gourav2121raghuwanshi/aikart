@@ -28,3 +28,8 @@ body{
   background: rgb(164,218,255);
   background: linear-gradient(80deg, rgba(164,218,255,1) 0%, rgba(199,192,255,1) 50%, rgba(217,239,255,1) 100%);
 }
+
+#root{
+  background: rgb(164,218,255);
+  background: linear-gradient(80deg, rgba(164,218,255,1) 0%, rgba(199,192,255,1) 50%, rgba(217,239,255,1) 100%);
+}
