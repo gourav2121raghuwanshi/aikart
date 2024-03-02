@@ -1,5 +1,5 @@
-# Web-dev-mini-projects
-The repository contains the list of awesome✨ &amp; cool web development beginner-friendly✌️ projects!
+# Ai-Kart
+Ai-kart is a web app that allow users to createe awsome✨ &amp; and cool custom ai-apps by providing custom detailed prompts and describedd output and input formats!
 <h1 align="center">Web-dev-mini-projects</h1>  
 
 <div align="center">  
