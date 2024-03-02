@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { errorHandler } = require('../utils/error.js');
 const fs = require("fs");
+const path = require("path");
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "AIzaSyBJF71Zvsclw6elAdcoWQEsfpnWKSx0Dy8");
@@ -15,35 +16,40 @@ async function text_to_text(prompt) {
     return text;
 }
 
-function fileToGenerativePart(path, mimeType) {
-    return {
-      inlineData: {
-        data: Buffer.from(fs.readFileSync(path)).toString("base64"),
-        mimeType
-      },
-    };
+function fileToGenerativePart(pathvar, mimeType) {
+    pathvar = path.resolve(pathvar);
+    if (fs.existsSync(pathvar)) {
+        console.log(pathvar);
+        return {
+            inlineData: {
+                data: Buffer.from(fs.readFileSync(pathvar)).toString("base64"),
+                mimeType
+            },
+        };
+    } else {
+        console.error('File not found:', pathvar);
+        // Handle error appropriately, e.g., return null or throw an error
+        return null;
+    }
 }
   
-async function image_to_text() {
+async function image_to_text(prompt, images) {
     const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
   
-    const prompt = "What's different between these pictures?";
-  
-    const imageParts = [
-      fileToGenerativePart("image1.png", "image/png"),
-      fileToGenerativePart("image2.jpeg", "image/jpeg"),
-    ];
+    const imageParts = [...images];
   
     const result = await model.generateContent([prompt, ...imageParts]);
     const response = await result.response;
     const text = response.text();
     console.log(text);
+    return text;
   }
 
 
 let context = {
     "text-to-text": text_to_text,
-    "image-to-text": image_to_text
+    "image-to-text": image_to_text,
+    "text-image-to-text": image_to_text
 }
 
 async function Evaluate(fn, arg){
@@ -83,4 +89,22 @@ exports.testRun = async (req, res, next) =>{
 
     var result = await context[obj.model].apply(context, [arg]);
     return res.json(result)
+}
+
+exports.testRunImg = async(req,res,next) => {
+    const obj = req.body;
+    var arg = obj.prompt + "\n";
+    for(var txt of obj.texts){
+        arg += txt["prefix"] + " : " + txt["value"] + "\n";
+    }
+    const imageParts = [];
+    for(var val of obj.images){
+        var img = fileToGenerativePart(val.image, val.mimetype)
+        imageParts.push(img);
+    }
+
+
+    var result = await context[obj.model].apply(context, [arg, imageParts]);
+    console.log(result);
+    return res.json(result);
 }

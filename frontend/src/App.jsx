@@ -19,18 +19,18 @@ import UserApp from "./pages/UserApp.jsx";
 export default function App() {
   
   return (
-    <BrowserRouter>
+  <BrowserRouter>
     <NavBar />
     <Routes>
       <Route path='/' element={<HomePage />} />
-      <Route path='/sign-in' element={<LoginPage />} />
+      <Route path='/sign-up' element={<SignupPage />} />
       <Route path='/sign-in' element={<LoginPage />} />
       <Route path='/about' element={<About />} />
       <Route path='/marketplace' element={<MarketPlace />}/>
       <Route element={<PrivateRoute />}>
         <Route path='/profile' element={<ProfilePage />} />   
         <Route path='/create/text-to-text' element={<TextToText />} />
-        <Route path='/create/text-to-text' element={<TextToText />} />
+        <Route path='/create/text-image-to-text' element={<Text_ImageToText />} />
         <Route path='/rate/:id' element={<ReviewPage />}/>    
         <Route path='/user-apps/:id' element={<UserApp />}/>    
         <Route path='/create/text-to-image' element={<TextToImage />} />   
