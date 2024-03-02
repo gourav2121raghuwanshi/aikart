@@ -3,8 +3,10 @@ Ai-kart is a web app that allow users to createe awsome✨ &amp; and cool custom
 <h1 align="center">Ai-Kart</h1>  
 
 <div align="center">  
-<a href="https://github.com/topics/html"><img alt="HTML" src="https://img.shields.io/badge/HTML%20-%23E34F26.svg?&style=for-the-badge"/></a>
-<a href="https://github.com/topics/css"><img alt="CSS" src="https://img.shields.io/badge/CSS%20-%23E34F26.svg?&style=for-the-badge"/></a>
+<a href="https://github.com/topics/html"><img alt="HTML" src="https://img.shields.io/badge/REACT%20-%23E34F26.svg?&style=for-the-badge"/></a>
+<a href="https://github.com/topics/css"><img alt="CSS" src="https://img.shields.io/badge/TAILWIND%20-%23E34F26.svg?&style=for-the-badge"/></a>
+<a href="https://github.com/topics/css"><img alt="CSS" src="https://img.shields.io/badge/NODE%20-%23E34F26.svg?&style=for-the-badge"/></a>
+<a href="https://github.com/topics/css"><img alt="CSS" src="https://img.shields.io/badge/EXPRESS%20-%23E34F26.svg?&style=for-the-badge"/></a>
 <a href="https://github.com/topics/javascript"><img alt="javascript" src="https://img.shields.io/badge/Javascript%20-%23E34F26.svg?&style=for-the-badge&logo=javascript&logoColor=white"/></a>
 <br>
 <br>
