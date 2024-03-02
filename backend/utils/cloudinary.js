@@ -1,6 +1,6 @@
 const cloudinary = require('cloudinary').v2;
 const {CloudinaryStorage } = require('multer-storage-cloudinary');
-
+const multer = require('multer');
 
 cloudinary.config({ 
   cloud_name: 'djrzg20q4', 
@@ -12,11 +12,14 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params:{
     folder: "aikart",
-    allowedFormats: ['jpg', 'png', 'gif', 'jpeg']
+    allowedFormats: ['jpg', 'png', 'gif', 'jpeg', 'webp']
   }
 });
 
+const upload = multer({storage});
+
 module.exports = {
   cloudinary,
-  storage
+  storage,
+  upload
 } 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { execute, testRun  } = require('../controllers/aiControllers.js');
+const { execute, testRun, testRunImg  } = require('../controllers/aiControllers.js');
 const {storage} = require('../utils/cloudinary.js');
 const multer = require('multer');
 const upload = multer({storage});
@@ -12,6 +12,7 @@ const Prompt = require('../models/promptModel.js')
 
 router.post('/execute', execute);
 router.post('/testrun', testRun);
+router.post('/testrunimg', testRunImg)
 
 router.post('/publish', upload.single('avatar'), async(req, res) => {
     const avatar = req.file.path;

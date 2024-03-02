@@ -13,12 +13,13 @@ import TextToImage from "./aiComponents/TextToImage.jsx";
 import MarketPlace from "./pages/MarketPlace.jsx";
 import New from "./pages/New.jsx";
 import ReviewPage from "./pages/ReviewPage.jsx";
+import Text_ImageToText from "./aiComponents/Text_ImageToText.jsx";
 
 
 export default function App() {
   
   return (
-    <BrowserRouter>
+  <BrowserRouter>
     <NavBar />
     <Routes>
       <Route path='/' element={<HomePage />} />
@@ -28,7 +29,7 @@ export default function App() {
       <Route element={<PrivateRoute />}>
         <Route path='/profile' element={<ProfilePage />} />   
         <Route path='/create/text-to-text' element={<TextToText />} />
-        <Route path='/create/text-to-text' element={<TextToText />} />
+        <Route path='/create/text-image-to-text' element={<Text_ImageToText />} />
         <Route path='/rate/:id' element={<ReviewPage />}/>    
         <Route path='/create/text-to-image' element={<TextToImage />} />   
       </Route>

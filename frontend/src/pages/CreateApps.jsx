@@ -19,7 +19,7 @@ const CreateApps = () => {
                     alt="Text-to-Image" class="w-full grayscale duration-100 group-hover:grayscale-0" />
                 </div>
             </a>
-            <a class=" bg-red-50 group flex flex-col gap-3 rounded-2xl p-5 duration-100 hover:bg-brand-amber-2" href="/create/text&image-to-text">
+            <a class=" bg-red-50 group flex flex-col gap-3 rounded-2xl p-5 duration-100 hover:bg-brand-amber-2" href="/create/text-image-to-text">
                 <h1 class="flex justify-between text-2xl">Text + Image to Text</h1>
                 <p>Make apps that Texts from text and images both.</p>
                 <div class="w-full overflow-hidden rounded-xl">

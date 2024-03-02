@@ -43,12 +43,13 @@ const Publish = ({data}) => {
                 hidden
             />
             <img
-                src={  fileurl || ''}
+                src={  fileurl || '/image.png'}
                 onClick={() => fileRef.current.click()}
-                alt="profile image"
+                alt="App image"
                 loading='lazy'
-                className='rounded-full h-16 w-16  sm:h-40 sm:w-40 object-cover cursor-pointer border mt-4 self-center'
+                className=' rounded h-28 w-32  sm:h-40 sm:w-40 object-cover cursor-pointer border border-gray-600 mt-4 self-center'
             />
+            <p className=' text-pretty text-stone-200'>Upload Image</p>
             <div className='w-full'>
                 <p className='text-white'>Title</p>
                 <input

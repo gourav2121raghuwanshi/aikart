@@ -5,7 +5,10 @@ const userRouter=require("./routes/userRoutes.js");
 
 const aiRoutes = require('./routes/aiRoutes.js');
 const dbConnect=require('./utils/databaseConnect.js');
-const upload = require('./utils/fileupload.js');
+//const {upload} = require('./utils/cloudinary.js')
+const upload = require('./utils/fileupload.js')
+
+
 const cors = require('cors');
 require('dotenv').config();
 
@@ -25,6 +28,11 @@ app.use('/api/user', userRouter);
 app.use('/ai', aiRoutes);
 
 app.post('/upload', upload.single("file"), (req, res) =>{
+  if(!req.file)return;
+  var destin = req.file.destination;
+  destin = "../backend" + destin.substring(1) + req.file.filename;
+  req.file["destin"] = destin;
+  console.log(destin);
   res.json(req.file)
 });
 
