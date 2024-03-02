@@ -23,12 +23,17 @@ const UserApp = () => {
         getMarket();
     }, []);
 
+    let y = true;
+    if(market.length === 0){
+        y = false;
+    }
+
   return (
     <div>
         <div id='user-app'>
             <div style={{position:"absolute", top:"80px", display:"flex", flexWrap:"wrap"}}>
                 {
-                    market && 
+                    y && market && 
                     market.map((curr) => (
                         <a href={`/market/${curr._id}`}>
                             <div style={{padding:12, paddingLeft:20}}>
@@ -36,6 +41,14 @@ const UserApp = () => {
                             </div>
                         </a>
                     ))
+                }
+                {
+                    
+                    !y &&
+                    <div style={{display:"flex", justifyContent:"center", alignItems:"center", height:"100vh", margin:"auto"}}> 
+                        <div>You have not created any App</div> <br />
+                        <a href={`/create`} style={{background:"blue", height:20}}><button >Create one</button></a>
+                    </div>
                 }
             </div>
         </div>
