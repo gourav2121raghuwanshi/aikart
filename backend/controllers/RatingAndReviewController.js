@@ -27,10 +27,10 @@ exports.ratingAndReview = async (req, res) => {
 
 exports.getCurrentratingAndReview = async (req, res) => {
     try {
-        const { id } = req.body;
+        const { id } = req.params;
         console.log(id);
-        const newReviewAndRating = await RatingAndReview.findOne({ user:new mongoose.Types.ObjectId(id) });
-
+        const newReviewAndRating = await RatingAndReview.find({ user:id });
+        console.log(newReviewAndRating);
       
         if (!newReviewAndRating) {
             return res.status(500).json("Please first make a reivew to see it.")
@@ -54,20 +54,18 @@ exports.getCurrentratingAndReview = async (req, res) => {
 exports.UpdateratingAndReview = async (req, res) => {
     try {
         const {id} = req.params;
-        const { review } =  req.body;
-         console.log(review);
+        const { rating, review } =  req.body;
+         console.log(rating, " " , review);
 
         const existingReview = await RatingAndReview.findOne({ user: id });
-        if (!existingReview) {
-            return res.status(404).json({
-                success: false,
-                message: "Review not found. Please first make a review to update it."
-            });
+        if (existingReview) {
+            await RatingAndReview.findByIdAndDelete(existingReview._id);
         }
-        await RatingAndReview.findByIdAndDelete(existingReview._id);
+        
 
         
         const newReviewAndRating = await RatingAndReview.create({
+            rating : rating,
             review: review,
             user: id
         });
