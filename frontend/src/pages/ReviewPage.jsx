@@ -13,7 +13,7 @@ const ReviewPage = () => {
     useEffect(() => {
         const getReview = async () => {
           try {
-            const res = await axios.get(`/api/user/ReviewOfCurrentUser/${currentUser._id}/${id}`);
+            const res = await axios.get(`/api/user/ReviewOfCurrentUser/${currentUser._id}`);
             const data = await res.data;
             const review = data.newReviewAndRating.review; const rating = data.newReviewAndRating.rating;
             setFormData((prevData) => ({
@@ -40,7 +40,7 @@ const ReviewPage = () => {
             e.preventDefault();
         try {
             console.log('Form data:', formData);
-            await axios.post(`/api/user/updateReview/${currentUser._id}/${id}`, JSON.stringify(formData));
+            await axios.post(`http://localhost:3000/api/user/updateReview/${currentUser._id}`, formData);
             
         } catch (e) {
             console.log(e);
