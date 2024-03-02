@@ -3,12 +3,12 @@ const User = require("../models/UserModel.js");
 const mongoose=require('mongoose')
 exports.ratingAndReview = async (req, res) => {
     try {
-        const { rating, review, id } = req.body;
+        const { rating, review, user } = req.body;
 
         const newReviewAndRating = await RatingAndReview.create({
             rating: rating,
             review: review,
-            user: id
+            user: user
         });
 
         res.status(201).json({
