@@ -1,6 +1,8 @@
 import React from 'react'
+import { useParams } from 'react-router-dom';
 
 const Intro = () => {
+    const {id}  = useParams();
   return (
     <div >
         <div style={{position:"absolute",top:"60px",width:"400px", backgroundColor:"black", color:"white"}}>
@@ -21,7 +23,7 @@ const Intro = () => {
                 </ul>
             </div>
 
-            <a href="/rate/:id" style={{background:"blue", height:20}}><button >Rate us!!</button></a>
+            <a href={`/rate/${id}`} style={{background:"blue", height:20}}><button >Rate us!!</button></a>
         </div>
         
     </div>
