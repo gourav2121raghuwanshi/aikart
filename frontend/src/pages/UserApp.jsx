@@ -30,9 +30,9 @@ const UserApp = () => {
     }
 
   return (
-    <div>
-        <div id='user-app' >
-            <div className='gradientbg' style={{position:"absolute", top:"80px", display:"flex", flexWrap:"wrap"}}>
+    <div style={{minHeight:"100vh"}}>
+        <div id='user-app' className=' pt-28 ' style={{minHeight:"100vh"}} >
+            <div className='gradientbg' style={{minHeight:"100vh"}} >
                 {
                     y && market && market.map((curr) => (
                         <a href={`/market/${curr.id}`}>
@@ -42,8 +42,8 @@ const UserApp = () => {
                         </a>
                     ))
                 }
+                
                 {
-                    
                     !y &&
                     <div className='flex justify-center items-center' style={{height:"100vh", width : "100vw"}}> 
                         <div className=' '>
@@ -52,8 +52,8 @@ const UserApp = () => {
                         </div>
                     </div>
                 }
-                <Footer />
             </div>
+            <Footer />
         </div>
     </div>
   )
