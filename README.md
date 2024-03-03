@@ -113,8 +113,12 @@ npm install
 npm run dev 
 ```
 
-**4.** Create .env file and insert the environment variables.
+**4.** Create .env file and insert the environment variables.  
 
+
+
+
+ :  
  
 ## Contributors 👷👷:  
 
