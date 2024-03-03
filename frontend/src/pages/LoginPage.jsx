@@ -45,7 +45,7 @@ const LoginPage = () => {
             navigate('/')
 
         } catch (error) {
-            dispatch(signInFailure());
+            dispatch(signInFailure(error.message));
             console.error('Error:', error.message);
         }
     };
@@ -58,9 +58,9 @@ const LoginPage = () => {
             </h1>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
 
-                <input type="text" placeholder='email' value={formdata.email} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='email' onChange={handleChange} >
+                <input type="text" placeholder='email' required="true" value={formdata.email} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='email' onChange={handleChange} >
                 </input>
-                <input type="password" placeholder='password' value={formdata.password} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='password' onChange={handleChange} >
+                <input type="password" placeholder='password' required="true" value={formdata.password} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='password' onChange={handleChange} >
                 </input>
                 <button disabled={loading} className='bg-slate-700 text-white p-3  py-3  rounded-lg uppercase sm:text-xl hover:opacity-95 disabled:opacity-80 transition-all  duration-200' >
                     {loading ? 'Loading...' : 'Sign in'}
@@ -75,7 +75,7 @@ const LoginPage = () => {
                     </span>
                 </Link>
             </div>
-            {error && <p className='text-red-500 mt-5 font-semibold text-xl '>{error}</p>}
+            {error && <p className='text-red-500 mt-5 font-semibold text-xl '>Please Enter Correct details</p>}
 
         </div>)
 }

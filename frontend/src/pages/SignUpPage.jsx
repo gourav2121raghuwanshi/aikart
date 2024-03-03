@@ -71,11 +71,11 @@ const SignUpPage = () => {
                 Sign Up
             </h1>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
-                <input type="text" placeholder='username' value={formdata.username} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='username' onChange={handleChange} >
+                <input type="text" required="true" placeholder='username' value={formdata.username} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='username' onChange={handleChange} >
                 </input>
-                <input type="text" placeholder='email' value={formdata.email} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='email' onChange={handleChange} >
+                <input type="text" required="true" placeholder='email' value={formdata.email} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='email' onChange={handleChange} >
                 </input>
-                <input type="password" placeholder='password' value={formdata.password} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='password' onChange={handleChange} >
+                <input type="password" required="true" placeholder='password' value={formdata.password} className='sm:text-xl font-semibold border p-3 rounded-lg ' id='password' onChange={handleChange} >
                 </input>
                 <button disabled={loadingg} className='bg-slate-700 text-white p-3 sm:text-xl py-3  rounded-lg uppercase hover:opacity-95 disabled:opacity-80 transition-all  duration-200' >
                     {loadingg ? 'Loading...' : 'Sign up'}
