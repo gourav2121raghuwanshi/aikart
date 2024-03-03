@@ -5,6 +5,7 @@ Ai-kart is a web app that allow users to createe awsome✨ &amp; and cool custom
 
 Discover a world of limitless possibilities with our MERN stack-powered application enriched with cutting-edge AI/ML capabilities. Our platform empowers users to unleash their creativity by effortlessly crafting personalized AI applications. Seamlessly blending image-to-text and text-to-text features, our app opens doors to a realm of diverse applications, making AI creation intuitive and exciting.  
 
+[![Watch the video](https://img.youtube.com/vi/5bQuESXjQx8/maxresdefault.jpg)](https://youtu.be/5bQuESXjQx8)
 
 ## 🚀 Key Features:  
 
@@ -23,10 +24,10 @@ At the heart of our platform is a commitment to empower creators. Whether you're
 ### 🌐 Seamless Integration:  
 Integrate your AI applications seamlessly with other platforms and services. Our app ensures compatibility and interoperability, allowing you to extend the reach and impact of your creations.  
 
-📈 Community-Driven Innovation:  
+### 📈 Community-Driven Innovation:  
 Join a vibrant community of like-minded individuals passionate about AI and ML. Share your experiences, seek advice, and collaborate with fellow innovators to push the boundaries of what's possible.  
 
-Embark on a journey of innovation and discovery with our MERN stack + AI/ML application. Revolutionize the way you interact with technology, and be part of a community that is shaping the future. Welcome to the AI Marketplace, where imagination knows no bounds! 🌌🚀
+Embark on a journey of innovation and discovery with our MERN stack + AI/ML application. Revolutionize the way you interact with technology, and be part of a community that is shaping the future. Welcome to the AI Marketplace, where imagination knows no bounds! 🌌🚀  
 
 
 
