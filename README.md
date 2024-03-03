@@ -19,10 +19,14 @@ AI/ML Integration: Immerse yourself in the future with seamless integration of A
 ![image](https://github.com/chaman56/aikart/assets/76009420/24ea7058-c193-41ba-9b8f-3fc33c6a48bc)
 
 
+
+
 ### 🌟 Unleash Your Imagination:  
 Craft your own AI applications effortlessly! Whether it's diagnosing diseases from images or transforming text into insightful narratives, our platform puts the creative control in your hands. Shape the future of technology by bringing your ideas to life. 
 
 ![image](https://github.com/chaman56/aikart/assets/76009420/b717bdf5-7e65-43cf-ae40-9187599bdc44)
+
+
 
 
 ### 🔍 Explore a Variety of AI Apps:  
@@ -31,10 +35,14 @@ Dive into a curated marketplace filled with a diverse array of AI applications. 
 ![image](https://github.com/chaman56/aikart/assets/76009420/e0148d53-0c96-47c3-9227-76d58d6cd9a1)
 
 
+
+
 ### 👩‍💻 Empowering Creators:  
 At the heart of our platform is a commitment to empower creators. Whether you're an AI enthusiast, a seasoned developer, or a curious beginner, our intuitive interface makes AI app creation accessible to all.  
 
 ![image](https://github.com/chaman56/aikart/assets/76009420/9712ac2d-ba66-49c0-9ca8-5fddd85c6c92)
+
+
 
 
 ### 🌐 Seamless Integration:  
