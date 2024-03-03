@@ -116,6 +116,12 @@ npm run dev
 **4.** Create .env file and insert the environment variables.
 
  
-## Project Maintainers 👷👷:
+## Contributors 👷👷:  
+
+### Chaman Yadav  
+### Gaurav Raghuvanshi  
+### Aviral Tiwari  
+### Himanshu  
+
 
 
