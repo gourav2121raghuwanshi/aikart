@@ -1,7 +1,7 @@
 # Ai-Kart
 Welcome to our revolutionary AI Marketplace, where innovation meets accessibility! 🌐✨  
 
-Ai-kart is a web app that allow users to createe awsome✨ and cool custom ai-apps by providing custom detailed prompts and describedd output and input formats!  
+Ai-kart is a web app that allow users to create awsome✨ and cool custom ai-apps by providing custom detailed prompts and described output and input formats!  
 
 Our platform empowers users to unleash their creativity by effortlessly crafting personalized AI applications. Seamlessly blending image-to-text and text-to-text features, our app opens doors to a realm of diverse applications, making AI creation intuitive and exciting.  
 
