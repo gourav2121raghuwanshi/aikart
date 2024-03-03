@@ -4,11 +4,13 @@ Welcome to our revolutionary AI Marketplace, where innovation meets accessibilit
 Ai-kart is a web app that allow users to createe awsome✨ and cool custom ai-apps by providing custom detailed prompts and describedd output and input formats!  
 
 Our platform empowers users to unleash their creativity by effortlessly crafting personalized AI applications. Seamlessly blending image-to-text and text-to-text features, our app opens doors to a realm of diverse applications, making AI creation intuitive and exciting.  
-Discover a world of limitless possibilities with our MERN stack-powered application enriched with cutting-edge AI/ML capabilities.   
 
 
 https://github.com/chaman56/aikart/assets/76009420/a3eb872a-abaf-4f43-9807-719c0ba617e3
 
+
+
+Discover a world of limitless possibilities with our MERN stack-powered application enriched with cutting-edge AI/ML capabilities.   
 
 
 ## 🚀 Key Features:  
