@@ -24,7 +24,7 @@ const Publish = ({data}) => {
         console.log(newData);
         document.getElementById("publish").style.display = "none";
 
-        axios.post("aikart-mern.vercel.app/ai/publish", newData)
+        axios.post("/ai/publish", newData)
         .then(res => { 
             console.log(res.data)
             window.alert(res.data.message +  "\nid : " + res.data.id);
@@ -38,7 +38,7 @@ const Publish = ({data}) => {
 
         const formD = new FormData();
         formD.append("file", e.target.files[0]);
-        await axios.post("aikart-mern.vercel.app/ai/upload", formD)
+        await axios.post("/ai/upload", formD)
         .then(res => { 
             console.log("response : ", res.data)
             setImageUrl(res.data.path);

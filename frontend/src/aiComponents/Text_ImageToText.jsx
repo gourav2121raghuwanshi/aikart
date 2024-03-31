@@ -103,7 +103,7 @@ function Text_ImageToText() {
     setfiles(allImages);
     const formD = new FormData();
     formD.append("file", value);
-    await axios.post("aikart-mern.vercel.app/upload", formD)
+    await axios.post("/upload", formD)
         .then(res => { 
             console.log("response : ", res.data)
             newInputs[index] = {"image" : res.data.destin, "mimetype" : res.data.mimetype};
@@ -150,7 +150,7 @@ function Text_ImageToText() {
     setisRunning(true);
     const dataObj = await getObj();
     console.log("dataObj : ", dataObj);
-    await axios.post("aikart-mern.vercel.app/ai/testrunimg", dataObj)
+    await axios.post("/ai/testrunimg", dataObj)
         .then(res => { 
             console.log("response : ", res.data)
             setmodelOutput(res.data);

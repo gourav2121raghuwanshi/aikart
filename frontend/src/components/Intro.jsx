@@ -48,7 +48,7 @@ const Intro = () => {
       setfiles(allImages);
       const formD = new FormData();
       formD.append("file", value);
-      await axios.post("aikart-mern.vercel.app/upload", formD)
+      await axios.post("/upload", formD)
           .then(res => { 
               console.log("response : ", res.data)
               newInputs["images"][index] ={...final["images"][index] , ...{"image" : res.data.destin, "mimetype" : res.data.mimetype}};

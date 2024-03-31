@@ -14,7 +14,7 @@ const ReviewPage = () => {
     useEffect(() => {
         const getReview = async () => {
           try {
-            const res = await axios.get(`/api/user/ReviewOfCurrentUser/${currentUser._id}`);
+            const res = await axios.get(`/api/user/ReviewOfCurrentUser/${currentUser?._id}`);
             const data = await res.data;
             console.log(data);
             const review = data.newReviewAndRating[0].review; const rating = data.newReviewAndRating[0].rating;
@@ -43,7 +43,7 @@ const ReviewPage = () => {
             e.preventDefault();
         try {
             console.log('Form data:', formData);
-            await axios.post(`aikart-mern.vercel.app/api/user/updateReview/${currentUser._id}`, formData);
+            await axios.post(`/api/user/updateReview/${currentUser?._id}`, formData);
             setFormData((prevData) => ({
                 ...prevData,
                 rating : 0, review : ""

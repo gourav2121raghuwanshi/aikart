@@ -9,6 +9,9 @@ import { useSelector } from 'react-redux';
 const HomePage = () => {
 
   const { currentUser } = useSelector(state => state.user);
+  // if (!currentUser) {
+  //   return "";
+  // }
   return (
     <div className='w-full'>
       <div className='w-11/12  pt-24 mx-auto'>
@@ -26,10 +29,10 @@ const HomePage = () => {
             </p>
             {
               currentUser &&
-                <Link className='  hover:cursor-pointer text-center text-white '
-                 to={'/marketplace'}>
+              <Link className='  hover:cursor-pointer text-center text-white '
+                to={'/marketplace'}>
                 <button className='text-start rounded-xl bg-blue-600 py-2 px-3'>Get Started</button></Link>
-        
+
             }
             {
               !currentUser && <Link className='  hover:cursor-pointer text-center'
@@ -59,10 +62,11 @@ const HomePage = () => {
       <Features />
 
       <Testimonials />
-      
+
       <div className=' text-center pt-10'>
-        <a href={`/rate/${currentUser._id}`} className=' px-3 py-3 rounded-xl mb-5 bg-blue-700 text-white cursor-pointer'>Rate us!!</a>
-      </div>
+        {
+          currentUser && <a href={`/rate/${currentUser._id}`} className=' px-3 py-3 rounded-xl mb-5 bg-blue-700 text-white cursor-pointer'>Rate us!!</a>
+        }  </div>
 
       <FAQ />
       <Footer />
