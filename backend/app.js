@@ -19,7 +19,11 @@ dbConnect();
 const app = express();
 app.use(express.json())
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+  origin: ["https://aikart-s5sk.vercel.app"],
+  credentials: true,
+  methods: "GET,PUT,POST,DELETE"
+}));
 app.use(express.static("aikart/backend/public"));
 
 app.use('/api/auth', authRouter);
