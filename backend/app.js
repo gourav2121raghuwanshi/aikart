@@ -36,6 +36,10 @@ app.post('/upload', upload.single("file"), (req, res) =>{
   res.json(req.file)
 });
 
+app.get("/", (req, res) => {
+  
+  res.send("Hello, world!"); // Sending a simple response
+});
 app.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);
 })
