@@ -6,11 +6,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'aikart-mern.vercel.app',
         secure: false,
       },
       '/ai': {
-        target: 'http://localhost:3000',
+        target: 'aikart-mern.vercel.app',
         secure: false,
       },
     },
