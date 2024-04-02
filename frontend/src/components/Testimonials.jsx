@@ -10,7 +10,7 @@ const Testimonials = () => {
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const res = await axios.get(`/api/user/getReviews`);
+        const res = await axios.get(`https://aikart-backend-eight.vercel.app/api/user/getReviews`);
         const data = await res.data;
         console.log(data.AllRatingAndReviews);
         setReviewData(data.AllRatingAndReviews);
