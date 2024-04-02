@@ -14,11 +14,11 @@ export default defineConfig({
       //   secure: false,
       // },
       '/api': {
-        target: 'https://aikart-mern.vercel.app',
+        target: 'https://aikart-backend-eight.vercel.app',
         secure: false,
       },
       '/ai': {
-        target: 'https://aikart-mern.vercel.app',
+        target: 'https://aikart-backend-eight.vercel.app',
         secure: false,
       },
     },
