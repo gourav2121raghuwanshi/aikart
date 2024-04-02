@@ -1,7 +1,5 @@
 import React, {  useState } from 'react';
 
-
-
 function TextToImage() {
   const [divs, setDivs] = useState([]);
   const [inputValues, setInputValues] = useState([]);

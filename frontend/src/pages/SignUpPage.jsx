@@ -33,7 +33,7 @@ const SignUpPage = () => {
 
         try {
             dispatch(signUpStart());
-            const res = await axios.post('/api/auth/signup', formdata, {
+            const res = await axios.post('https://aikart-backend-eight.vercel.app/api/auth/signup', formdata, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

@@ -13,7 +13,7 @@ const UserApp = () => {
     useEffect(() => {
         const getMarket = async () => {
           try {
-            const res = await axios.get(`/ai/getuserprompts/${currentUser._id}`);
+            const res = await axios.get(`https://aikart-backend-eight.vercel.app/ai/getuserprompts/${currentUser._id}`);
             const data = await res.data;
             setMarket(data);
             console.log(data);

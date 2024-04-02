@@ -49,7 +49,7 @@ const ProfilePage = () => {
         try {
             dispatch(updateUserStart());
             // console.log(formData);
-            const res = await axios.post(`/api/user/update/${currentUser._id}`, formData, {
+            const res = await axios.post(`https://aikart-backend-eight.vercel.app/api/user/update/${currentUser._id}`, formData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -98,7 +98,7 @@ const ProfilePage = () => {
         try {
             dispatch(deleteUserStart());
             console.log(currentUser._id);
-            const res = await axios.delete(`/api/user/delete/${currentUser._id}`);
+            const res = await axios.delete(`https://aikart-backend-eight.vercel.app/api/user/delete/${currentUser._id}`);
             const data = await res.data;
 
             if (data.success === false) {
@@ -118,7 +118,7 @@ const ProfilePage = () => {
     const handleSignOut = async () => {
         try {
             dispatch(signoutUserStart())
-            const res = await axios.get(`/api/auth/signout`);
+            const res = await axios.get(`https://aikart-backend-eight.vercel.app/api/auth/signout`);
             const data = await res.data;
             if (data.success === false) {
                 dispatch(signoutUserFailure(data.message))

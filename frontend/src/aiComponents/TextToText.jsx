@@ -68,7 +68,7 @@ function TextToText() {
 
   const handleRun = async () =>{
     setisRunning(true);
-    await fetch('/ai/testrun', {
+    await fetch('https://aikart-backend-eight.vercel.app/ai/testrun', {
         method : 'POST',
         headers:{
             'Content-Type' : 'application/json',

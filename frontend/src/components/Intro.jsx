@@ -19,7 +19,7 @@ const Intro = () => {
     useEffect(() => {
         const getMarket = async () => {
           try {
-            const res = await axios.get(`/ai/getprompt/${id}`);
+            const res = await axios.get(`https://aikart-backend-eight.vercel.app/ai/getprompt/${id}`);
             const data = await res.data;
             setMarket(data);
             setfinal(data);
@@ -48,7 +48,7 @@ const Intro = () => {
       setfiles(allImages);
       const formD = new FormData();
       formD.append("file", value);
-      await axios.post("/upload", formD)
+      await axios.post("https://aikart-backend-eight.vercel.app/upload", formD)
           .then(res => { 
               console.log("response : ", res.data)
               newInputs["images"][index] ={...final["images"][index] , ...{"image" : res.data.destin, "mimetype" : res.data.mimetype}};
@@ -62,11 +62,11 @@ const Intro = () => {
       setisRunning(true);
       try {
         if(final?.model==="text-image-to-text"){
-          const res = await axios.post(`/ai/testrunimg`, final);
+          const res = await axios.post(`https://aikart-backend-eight.vercel.app/ai/testrunimg`, final);
           const data = await res.data;
           setmodelOutput(data);
         }else if(final?.model==="text-to-text"){
-          const res = await axios.post(`/ai/testrun`, final);
+          const res = await axios.post(`https://aikart-backend-eight.vercel.app/ai/testrun`, final);
           const data = await res.data;
           setmodelOutput(data);
         }else{

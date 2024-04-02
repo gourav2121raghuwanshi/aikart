@@ -25,7 +25,7 @@ const LoginPage = () => {
         e.preventDefault();
         try {
             dispatch(signInStart());
-            const res = await axios.post('/api/auth/signin', formdata, {
+            const res = await axios.post('https://aikart-backend-eight.vercel.app/api/auth/signin', formdata, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
