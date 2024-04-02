@@ -11,7 +11,6 @@ const upload = require('./utils/fileupload.js')
 
 const cors = require('cors');
 require('dotenv').config();
-
 dbConnect();
 
 // __dirname = path.resolve();
