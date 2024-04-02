@@ -43,7 +43,7 @@ app.post('/upload', upload.single("file"), (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello, world!"); 
+  res.send("<h1>Hello, world!</h1>"); 
 });
 
 // app.use(express.static(path.join(__dirname, '/frontend/dist')));
