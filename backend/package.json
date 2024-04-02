@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "vite build",
    "dev": "nodemon app.js",
     "start": "node app.js"
   },
