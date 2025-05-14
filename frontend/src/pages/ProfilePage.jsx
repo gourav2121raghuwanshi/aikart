@@ -23,6 +23,8 @@ import {
     signoutUserSuccess,
     signoutUserFailure
 } from '../redux/user/userSlice';
+import CONFIG from '../config';
+
 
 const ProfilePage = () => {
     const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -35,6 +37,9 @@ const ProfilePage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const uri="http://localhost:3000";
+    // const uri="https://aikart-backend-eight.vercel.app";
+        
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
     };
@@ -49,7 +54,7 @@ const ProfilePage = () => {
         try {
             dispatch(updateUserStart());
             // console.log(formData);
-            const res = await axios.post(`https://aikart-backend-eight.vercel.app/api/user/update/${currentUser._id}`, formData, {
+            const res = await axios.post(`${CONFIG.API_URI}`+`/api/user/update/${currentUser._id}`, formData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -98,7 +103,7 @@ const ProfilePage = () => {
         try {
             dispatch(deleteUserStart());
             console.log(currentUser._id);
-            const res = await axios.delete(`https://aikart-backend-eight.vercel.app/api/user/delete/${currentUser._id}`);
+            const res = await axios.delete(`${CONFIG.API_URI}`+`/api/user/delete/${currentUser._id}`);
             const data = await res.data;
 
             if (data.success === false) {
@@ -118,7 +123,7 @@ const ProfilePage = () => {
     const handleSignOut = async () => {
         try {
             dispatch(signoutUserStart())
-            const res = await axios.get(`https://aikart-backend-eight.vercel.app/api/auth/signout`);
+            const res = await axios.get(`${CONFIG.API_URI}`+`/api/auth/signout`);
             const data = await res.data;
             if (data.success === false) {
                 dispatch(signoutUserFailure(data.message))

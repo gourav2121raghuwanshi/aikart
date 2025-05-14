@@ -4,17 +4,21 @@ import Rating from '@mui/material/Rating';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios'; 
+import CONFIG from '../config';
+
 
 const ReviewPage = () => {
     const {id} = useParams();
     const [formData, setFormData] = useState({rating:0, review:""});
     const { currentUser } = useSelector(state => state.user);
     const Navigate = useNavigate();
-
+    const uri="http://localhost:3000";
+    // const uri="https://aikart-backend-eight.vercel.app";
+        
     useEffect(() => {
         const getReview = async () => {
           try {
-            const res = await axios.get(`https://aikart-backend-eight.vercel.app/api/user/ReviewOfCurrentUser/${currentUser?._id}`);
+            const res = await axios.get(`${CONFIG.API_URI}`+`/api/user/ReviewOfCurrentUser/${currentUser?._id}`);
             const data = await res.data;
             console.log(data);
             const review = data.newReviewAndRating[0].review; const rating = data.newReviewAndRating[0].rating;
@@ -43,7 +47,7 @@ const ReviewPage = () => {
             e.preventDefault();
         try {
             console.log('Form data:', formData);
-            await axios.post(`https://aikart-backend-eight.vercel.app/api/user/updateReview/${currentUser?._id}`, formData);
+            await axios.post(`${CONFIG.API_URI}`+`/api/user/updateReview/${currentUser?._id}`, formData);
             setFormData((prevData) => ({
                 ...prevData,
                 rating : 0, review : ""

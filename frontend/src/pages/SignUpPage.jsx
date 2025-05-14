@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUpStart, signUpSuccess, signUpFailure } from "../redux/user/userSlice"
 import OAuth from '../components/OAuth';
+import CONFIG from '../config';
+
 
 const SignUpPage = () => {
 
@@ -27,13 +29,16 @@ const SignUpPage = () => {
             }
         )
     }
+    const uri="http://localhost:3000";
+    // const uri="https://aikart-backend-eight.vercel.app";
+        
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
         try {
             dispatch(signUpStart());
-            const res = await axios.post('https://aikart-backend-eight.vercel.app/api/auth/signup', formdata, {
+            const res = await axios.post(`${CONFIG.API_URI}`+'/api/auth/signup', formdata, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

@@ -4,13 +4,19 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { IoMdStar } from "react-icons/io";
+import CONFIG from '../config';
+
+
 const Testimonials = () => {
   const [reviewData, setReviewData] = useState([]);
 
+  const uri="http://localhost:3000";
+  // const uri="https://aikart-backend-eight.vercel.app";
+      
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const res = await axios.get(`https://aikart-backend-eight.vercel.app/api/user/getReviews`);
+        const res = await axios.get(`${CONFIG.API_URI}`+`/api/user/getReviews`);
         const data = await res.data;
         console.log(data.AllRatingAndReviews);
         setReviewData(data.AllRatingAndReviews);

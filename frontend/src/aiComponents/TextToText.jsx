@@ -1,6 +1,8 @@
 import React, {  useState } from 'react';
 import Markdown from 'react-markdown'
 import Publish from './Publish';
+import CONFIG from '../config';
+
 
 
 function TextToText() {
@@ -68,7 +70,7 @@ function TextToText() {
 
   const handleRun = async () =>{
     setisRunning(true);
-    await fetch('https://aikart-backend-eight.vercel.app/ai/testrun', {
+    await fetch(`${CONFIG.API_URI}`+'/ai/testrun', {
         method : 'POST',
         headers:{
             'Content-Type' : 'application/json',

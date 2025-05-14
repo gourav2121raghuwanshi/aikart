@@ -4,16 +4,20 @@ import  { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import MediaCard from './card';
 import Footer from '../components/Footer';
+import CONFIG from '../config';
+
 
 const UserApp = () => {
 
     const { currentUser } = useSelector(state => state.user);
     const [market, setMarket] = useState([]);
-
+    const uri="http://localhost:3000";
+    // const uri="https://aikart-backend-eight.vercel.app";
+        
     useEffect(() => {
         const getMarket = async () => {
           try {
-            const res = await axios.get(`https://aikart-backend-eight.vercel.app/ai/getuserprompts/${currentUser._id}`);
+            const res = await axios.get(`${CONFIG.API_URI}`+`/ai/getuserprompts/${currentUser._id}`);
             const data = await res.data;
             setMarket(data);
             console.log(data);

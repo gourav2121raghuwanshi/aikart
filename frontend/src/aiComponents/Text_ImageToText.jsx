@@ -2,6 +2,8 @@ import React, {  useState, useRef } from 'react';
 import Markdown from 'react-markdown'
 import Publish from './Publish';
 import axios from 'axios';
+import CONFIG from '../config';
+
 
 
 function Text_ImageToText() {
@@ -103,7 +105,7 @@ function Text_ImageToText() {
     setfiles(allImages);
     const formD = new FormData();
     formD.append("file", value);
-    await axios.post("https://aikart-backend-eight.vercel.app/upload", formD)
+    await axios.post(`${CONFIG.API_URI}`+"/upload", formD)
         .then(res => { 
             console.log("response : ", res.data)
             newInputs[index] = {"image" : res.data.destin, "mimetype" : res.data.mimetype};
@@ -150,7 +152,7 @@ function Text_ImageToText() {
     setisRunning(true);
     const dataObj = await getObj();
     console.log("dataObj : ", dataObj);
-    await axios.post("https://aikart-backend-eight.vercel.app/ai/testrunimg", dataObj)
+    await axios.post(`${CONFIG.API_URI}`+"/ai/testrunimg", dataObj)
         .then(res => { 
             console.log("response : ", res.data)
             setmodelOutput(res.data);

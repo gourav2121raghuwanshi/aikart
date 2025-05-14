@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
+import CONFIG from '../config';
+
 
 const Publish = ({data}) => {
     const [file, setFile] = useState(null);
@@ -24,7 +26,7 @@ const Publish = ({data}) => {
         console.log(newData);
         document.getElementById("publish").style.display = "none";
 
-        axios.post("https://aikart-backend-eight.vercel.app/ai/publish", newData)
+        axios.post(`${CONFIG.API_URI}`+"/ai/publish", newData)
         .then(res => { 
             console.log(res.data)
             window.alert(res.data.message +  "\nid : " + res.data.id);
@@ -38,7 +40,7 @@ const Publish = ({data}) => {
 
         const formD = new FormData();
         formD.append("file", e.target.files[0]);
-        await axios.post("https://aikart-backend-eight.vercel.app/ai/upload", formD)
+        await axios.post(`${CONFIG.API_URI}`+"/ai/upload", formD)
         .then(res => { 
             console.log("response : ", res.data)
             setImageUrl(res.data.path);

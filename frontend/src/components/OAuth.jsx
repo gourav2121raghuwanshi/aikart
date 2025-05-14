@@ -3,17 +3,22 @@ import { app } from '../firebase.js';
 import { useDispatch } from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice.js';
 import { useNavigate } from 'react-router-dom';
+import CONFIG from '../config';
+
 
 export default function OAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const uri="http://localhost:3000";
+  // const uri="https://aikart-backend-eight.vercel.app";
+      
   const handleGoogleClick = async () => {
     try {
       const provider = new GoogleAuthProvider();
       const auth = getAuth(app);
       const result = await signInWithPopup(auth, provider);
 
-      const res = await fetch('https://aikart-backend-eight.vercel.app/api/auth/google', {
+      const res = await fetch(`${CONFIG.API_URI}`+'/api/auth/google', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

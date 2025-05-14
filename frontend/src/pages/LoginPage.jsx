@@ -5,6 +5,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart, signInSuccess, signInFailure } from "../redux/user/userSlice"
+import CONFIG from '../config';
+
 
 const LoginPage = () => {
     const [formdata, setformdata] = useState({
@@ -20,12 +22,14 @@ const LoginPage = () => {
             [e.target.id]: e.target.value,
         });
     };
-
+    const uri="http://localhost:3000";
+    // const uri="https://aikart-backend-eight.vercel.app";
+        
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             dispatch(signInStart());
-            const res = await axios.post('https://aikart-backend-eight.vercel.app/api/auth/signin', formdata, {
+            const res = await axios.post(`${CONFIG.API_URI}`+'/api/auth/signin', formdata, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

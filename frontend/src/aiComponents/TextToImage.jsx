@@ -1,4 +1,7 @@
 import React, {  useState } from 'react';
+import CONFIG from '../config';
+
+
 
 function TextToImage() {
   const [divs, setDivs] = useState([]);

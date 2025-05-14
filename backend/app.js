@@ -21,6 +21,7 @@ app.use(express.json())
 app.use(cookieParser());
 
 app.use(cors({
+  // origin: "http://localhost:5173",
   origin: "https://aikart-s5sk.vercel.app",
   credentials: true,
   methods: ["GET", "PUT", "POST", "DELETE"]
