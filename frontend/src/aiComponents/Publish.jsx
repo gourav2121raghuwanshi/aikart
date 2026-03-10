@@ -5,13 +5,12 @@ import { useSelector } from 'react-redux';
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Publish = ({ data }) => {
-  const [file, setFile] = useState(null);
-  const [fileurl, setfileurl] = useState();
+  const [fileurl, setfileurl] = useState('');
   const [formData, setFormData] = useState({});
   const fileRef = useRef(null);
   const [isUploading, setisUploading] = useState(false);
-  const { currentUser } = useSelector(state => state.user);
-  const [imageUrl, setImageUrl] = useState(null);
+  const { currentUser } = useSelector((state) => state.user);
+  const [imageUrl, setImageUrl] = useState('');
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -19,7 +18,7 @@ const Publish = ({ data }) => {
 
   const handleSubmit = async () => {
     if (!imageUrl) {
-      window.alert("Image is not Uploaded!");
+      window.alert("Image is not uploaded!");
       return;
     }
 
@@ -39,7 +38,7 @@ const Publish = ({ data }) => {
       });
 
       console.log(res.data);
-      window.alert(res.data.message + "\nid : " + res.data.id);
+      window.alert(`${res.data.message}\nid : ${res.data.id}`);
     } catch (err) {
       console.log(err);
       window.alert("Failed to publish app");
@@ -58,26 +57,27 @@ const Publish = ({ data }) => {
       }
 
       setfileurl(URL.createObjectURL(selectedFile));
-      setFile(selectedFile);
 
       const formD = new FormData();
       formD.append("file", selectedFile);
 
-      const res = await axios.post(`${API_URL}/ai/upload`, formD, {
+      const res = await axios.post(`${API_URL}/upload`, formD, {
         withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
-      console.log("response : ", res.data);
-      setImageUrl(res.data.path);
+      console.log("upload response:", res.data);
+
+      // Cloudinary-backed backend returns { url, mimetype, filename }
+      setImageUrl(res.data.url);
     } catch (err) {
       console.log(err);
       window.alert("Image upload failed");
+    } finally {
+      setisUploading(false);
     }
-
-    setisUploading(false);
   };
 
   return (
@@ -99,7 +99,9 @@ const Publish = ({ data }) => {
         className='rounded h-28 w-32 sm:h-40 sm:w-40 object-cover cursor-pointer border border-gray-600 mt-4 self-center'
       />
 
-      <p className='text-pretty text-stone-200'>Upload Image</p>
+      <p className='text-pretty text-stone-200'>
+        {isUploading ? 'Uploading image...' : 'Upload Image'}
+      </p>
 
       <div className='w-full'>
         <p className='text-white'>Title</p>
@@ -149,9 +151,7 @@ const Publish = ({ data }) => {
             </svg>
             <span className="sr-only">Loading...</span>
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
 
         <button
           onClick={handleSubmit}

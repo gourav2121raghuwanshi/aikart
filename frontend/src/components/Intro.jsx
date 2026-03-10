@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Markdown from 'react-markdown';
@@ -77,7 +77,7 @@ const Intro = () => {
           i === index
             ? {
                 ...item,
-                image: res.data.destin,
+                image: res.data.url,
                 mimetype: res.data.mimetype,
               }
             : item
@@ -85,9 +85,9 @@ const Intro = () => {
       }));
     } catch (err) {
       console.log("image upload failed", err);
+    } finally {
+      setIsuploading(false);
     }
-
-    setIsuploading(false);
   };
 
   const handleRun = async () => {
@@ -109,9 +109,9 @@ const Intro = () => {
       }
     } catch (err) {
       console.log(err);
+    } finally {
+      setisRunning(false);
     }
-
-    setisRunning(false);
   };
 
   return (
