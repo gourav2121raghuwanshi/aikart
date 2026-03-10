@@ -3,40 +3,51 @@ import { app } from '../firebase.js';
 import { useDispatch } from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice.js';
 import { useNavigate } from 'react-router-dom';
-import CONFIG from '../config';
 
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function OAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const uri="http://localhost:3000";
-  // const uri="https://aikart-backend-eight.vercel.app";
-      
+
   const handleGoogleClick = async () => {
     try {
       const provider = new GoogleAuthProvider();
       const auth = getAuth(app);
       const result = await signInWithPopup(auth, provider);
 
-      const res = await fetch(`${CONFIG.API_URI}`+'/api/auth/google', {
+      const res = await fetch(`${API_URL}/api/auth/google`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({
           name: result.user.displayName,
           email: result.user.email,
           photo: result.user.photoURL,
         }),
       });
+
+      if (!res.ok) {
+        const text = await res.text();
+        console.error('Google auth backend error:', res.status, text);
+        throw new Error(`Request failed with status ${res.status}`);
+      }
+
       const data = await res.json();
-      document.cookie = `access_token=${data.token}; path=/`;
+
+      if (data.token) {
+        document.cookie = `access_token=${data.token}; path=/`;
+      }
+
       dispatch(signInSuccess(data));
       navigate('/');
     } catch (error) {
       console.log('could not sign in with google', error);
     }
   };
+
   return (
     <button
       onClick={handleGoogleClick}

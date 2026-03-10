@@ -1,41 +1,37 @@
 const express = require('express')
 const cookieParser = require('cookie-parser');
 const authRouter = require('./routes/authRoutes.js');
-const userRouter = require("./routes/userRoutes.js");
+const userRouter=require("./routes/userRoutes.js");
 
 const aiRoutes = require('./routes/aiRoutes.js');
-const dbConnect = require('./utils/databaseConnect.js');
+const dbConnect=require('./utils/databaseConnect.js');
 //const {upload} = require('./utils/cloudinary.js')
 const upload = require('./utils/fileupload.js')
-// const path = require('path');
 
 const cors = require('cors');
 require('dotenv').config();
+
 dbConnect();
 
-// __dirname = path.resolve();
 
 
 const app = express();
 app.use(express.json())
 app.use(cookieParser());
-
 app.use(cors({
-  // origin: "http://localhost:5173",
-  origin: "https://aikart-s5sk.vercel.app",
-  credentials: true,
-  methods: ["GET", "PUT", "POST", "DELETE"]
+  origin: [process.env.FRONT_END_URL],
+  credentials: true
 }));
 
-
 app.use(express.static("aikart/backend/public"));
+
 app.use('/api/auth', authRouter);
 app.use('/api/user', userRouter);
 
 app.use('/ai', aiRoutes);
 
-app.post('/upload', upload.single("file"), (req, res) => {
-  if (!req.file) return;
+app.post('/upload', upload.single("file"), (req, res) =>{
+  if(!req.file)return;
   var destin = req.file.destination;
   destin = "../backend" + destin.substring(1) + req.file.filename;
   req.file["destin"] = destin;
@@ -43,14 +39,10 @@ app.post('/upload', upload.single("file"), (req, res) => {
   res.json(req.file)
 });
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello, world!</h1>"); 
+app.get('/', (req, res) => {
+  console.log("App is running");
+  return res.send("App is running");
 });
-
-// app.use(express.static(path.join(__dirname, '/frontend/dist')));
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
-// })
 
 app.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);

@@ -2,10 +2,8 @@ import React, {  useState, useRef } from 'react';
 import Markdown from 'react-markdown'
 import Publish from './Publish';
 import axios from 'axios';
-import CONFIG from '../config';
 
-
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Text_ImageToText() {
   const [divs, setDivs] = useState([]);
   const [inputValues, setInputValues] = useState([]);
@@ -105,7 +103,7 @@ function Text_ImageToText() {
     setfiles(allImages);
     const formD = new FormData();
     formD.append("file", value);
-    await axios.post(`${CONFIG.API_URI}`+"/upload", formD)
+    await axios.post(`${API_URL}/upload`, formD)
         .then(res => { 
             console.log("response : ", res.data)
             newInputs[index] = {"image" : res.data.destin, "mimetype" : res.data.mimetype};
@@ -152,7 +150,7 @@ function Text_ImageToText() {
     setisRunning(true);
     const dataObj = await getObj();
     console.log("dataObj : ", dataObj);
-    await axios.post(`${CONFIG.API_URI}`+"/ai/testrunimg", dataObj)
+    await axios.post(`${API_URL}/ai/testrunimg`, dataObj)
         .then(res => { 
             console.log("response : ", res.data)
             setmodelOutput(res.data);

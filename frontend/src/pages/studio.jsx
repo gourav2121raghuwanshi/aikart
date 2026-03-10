@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
 import axios from "axios";
-import CONFIG from '../config';
-
-
+const API_URL = import.meta.env.VITE_API_URL;
 const ImageForm = () => {
 
 const [file, setFile] = useState(null);
@@ -23,7 +21,7 @@ const handleSubmit = (event) => {
     for(var x = 0; x<file.length; x++) {
         data.append('file', file[x])
     }
-    axios.post(`${CONFIG.API_URI}`+"/upload", data)
+    axios.post(`${API_URL}/upload`, data)
     .then(res => { 
         console.log(res)
         setRes(JSON.stringify({"path":res.data.path, "mimetype": res.data.mimetype}))
