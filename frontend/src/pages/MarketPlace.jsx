@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -16,9 +17,7 @@ const MarketPlace = () => {
           withCredentials: true,
         });
 
-        const data = res.data;
-        setMarket(data);
-        console.log(data);
+        setMarket(res.data);
       } catch (err) {
         console.log("cannot get market ", err);
       }
@@ -36,9 +35,9 @@ const MarketPlace = () => {
         style={{ minHeight: "100vh" }}
       >
         {market.map((curr) => (
-          <a
+          <Link
             className="bg-blue-300 group flex flex-col gap-3 rounded-2xl p-5 duration-100 hover:bg-brand-amber-2"
-            href={isLoggedIn ? `/market/${curr._id}` : '/sign-in'}
+            to={isLoggedIn ? `/market/${curr._id}` : '/sign-in'}
             key={curr._id}
           >
             <div className="w-full overflow-hidden rounded-xl">
@@ -48,9 +47,10 @@ const MarketPlace = () => {
                 alt={curr.title}
               />
             </div>
+
             <h1 className="flex justify-between text-2xl">{curr.title}</h1>
             <p>{curr.description}</p>
-          </a>
+          </Link>
         ))}
       </div>
 

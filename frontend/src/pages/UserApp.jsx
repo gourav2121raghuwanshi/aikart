@@ -1,7 +1,7 @@
-import React from 'react';
-import axios from 'axios'; 
-import  { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import MediaCard from './card';
 import Footer from '../components/Footer';
 
@@ -40,7 +40,7 @@ const UserApp = () => {
         <div className='gradientbg' style={{ minHeight: "100vh" }}>
           {hasApps &&
             market.map((curr) => (
-              <a href={`/market/${curr.id}`} key={curr.id}>
+              <Link to={`/market/${curr.id}`} key={curr.id}>
                 <div style={{ padding: 12, paddingLeft: 20 }}>
                   <MediaCard
                     Title={curr.title}
@@ -48,7 +48,7 @@ const UserApp = () => {
                     imgUrl={curr.avatar}
                   />
                 </div>
-              </a>
+              </Link>
             ))}
 
           {!hasApps && (
@@ -58,9 +58,9 @@ const UserApp = () => {
                   No Apps Created
                 </div>
                 <br />
-                <a className='py-2 px-4 rounded-lg bg-green-300' href={`/create`} style={{ height: 20 }}>
+                <Link className='py-2 px-4 rounded-lg bg-green-300' to='/create' style={{ height: 20 }}>
                   + Create App
-                </a>
+                </Link>
               </div>
             </div>
           )}
