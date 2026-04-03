@@ -81,43 +81,59 @@ const ReviewPage = () => {
   };
 
   return (
-    <div className='flex justify-center items-center' style={{ height: "100vh" }}>
-      <div className='mainForm gradientbg'>
-        <p style={{ fontWeight: "bolder", fontSize: 22, margin: "1rem" }}>
-          Rate us :{" "}
-          <Rating
-            name="rating"
-            value={formData.rating}
-            size="large"
-            onChange={handleRatingChange}
-          />
-        </p>
+    <div className='gradientbg min-h-screen pt-24 pb-10 px-4'>
+      <div className='mx-auto max-w-3xl'>
+        <div className='relative overflow-hidden glass-panel p-5 sm:p-7'>
+          <div className="absolute -top-16 -right-12 h-36 w-36 rounded-full bg-indigo-500/30 blur-3xl" />
+          <div className="absolute -bottom-16 left-12 h-32 w-32 rounded-full bg-pink-500/25 blur-3xl" />
 
-        <p style={{ fontWeight: "bolder", fontSize: 22, margin: "1rem" }}>
-          Review Form :
-        </p>
+          <div className='relative'>
+            <p className='text-[11px] uppercase tracking-[0.2em] text-indigo-300'>Feedback</p>
+            <h1 className='text-3xl font-bold text-slate-50 mt-1'>Rate Your Experience</h1>
+            <p className='text-sm text-slate-300 mt-1 mb-5'>
+              Your review helps us improve AI-Kart and helps other builders discover the platform.
+            </p>
+          </div>
 
-        <form onSubmit={handleSubmit}>
-          <textarea
-            name="review"
-            value={formData.review}
-            cols="90"
-            rows="10"
-            placeholder='  Enter Your Review Please..'
-            onChange={handleChange}
-            style={{ margin: "1rem" }}
-          />
-          <br />
+          <div className='relative rounded-xl border border-slate-700/70 bg-slate-900/70 px-4 py-3 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2'>
+            <p className='text-sm font-semibold text-slate-100'>Your rating</p>
+            <Rating
+              name="rating"
+              value={formData.rating}
+              size="large"
+              onChange={handleRatingChange}
+              sx={{ '& .MuiRating-iconFilled': { color: '#f59e0b' } }}
+            />
+          </div>
 
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            sx={{ left: "48vh" }}
-          >
-            Update
-          </Button>
-        </form>
+          <form onSubmit={handleSubmit} className='relative'>
+            <textarea
+              name="review"
+              value={formData.review}
+              rows="8"
+              placeholder='Share your honest experience...'
+              onChange={handleChange}
+              className='w-full rounded-xl border border-slate-700 bg-slate-950/70 p-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500'
+            />
+
+            <div className='mt-4 flex justify-end'>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                sx={{
+                  borderRadius: '999px',
+                  textTransform: 'none',
+                  px: 3,
+                  py: 1,
+                  fontWeight: 700,
+                }}
+              >
+                Submit Review
+              </Button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

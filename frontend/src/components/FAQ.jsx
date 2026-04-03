@@ -15,24 +15,33 @@ const FAQ = () => {
   };
 
   return (
-    <div className='w-11/12 mx-auto pt-24 mb-20'>
-      <div className='text-3xl font-bold text-blue-700 mt-5 mb-8 sm:text-center'>
-        Frequently asked questions
+    <div className='w-11/12 max-w-6xl mx-auto pt-10 mb-20'>
+      <div className='glass-panel px-5 py-5 sm:px-7 sm:py-6 mb-5'>
+        <p className='text-[11px] uppercase tracking-[0.2em] text-indigo-300'>Support</p>
+        <div className='text-3xl font-bold text-slate-50 mt-1 sm:text-left'>
+          Frequently Asked Questions
+        </div>
+        <p className='text-sm text-slate-300 mt-1 max-w-2xl'>
+          Quick answers to common questions about creating, publishing, and using apps on AI-Kart.
+        </p>
       </div>
-      <div className="faq-container flex flex-col gap-2">
+
+      <div className="faq-container flex flex-col gap-3">
         {faqData.map((faq) => (
-          <div key={faq.id} className='flex flex-col gap-1 py-2 border-b-2 border-gray-700 bg-[#999DAA] bg-blue-200 border-opacity-30  px-4 rounded-xl'>
-            <div className="question flex flex-row justify-between    px-4 py-2 rounded-xl  " onClick={() => toggleAnswer(faq.id)}>
-              <span className='text-black '>{faq.question}</span>
+          <div key={faq.id} className='rounded-2xl border border-slate-800/80 bg-slate-900/75 overflow-hidden'>
+            <button
+              className="question w-full text-left flex flex-row justify-between items-center px-4 py-4"
+              onClick={() => toggleAnswer(faq.id)}
+            >
+              <span className='text-slate-100 text-sm sm:text-base font-medium pr-3'>{faq.question}</span>
               {activeAnswer === faq.id ? (
-                <SlArrowUp className="text-black ml-2" />
+                <SlArrowUp className="text-slate-300 ml-2 shrink-0" />
               ) : (
-                <SlArrowDown className="text-black ml-2" />
+                <SlArrowDown className="text-slate-300 ml-2 shrink-0" />
               )}
-              
-            </div>
+            </button>
             {activeAnswer === faq.id && (
-              <div className="answer px-4 bg-blue-500 text-white  py-2 rounded-xl">
+              <div className="answer px-4 pb-4 text-slate-300 text-sm leading-relaxed border-t border-slate-800/80">
                 {faq.answer}
               </div>
             )}

@@ -26,7 +26,7 @@ const Intro = () => {
         setfinal(data);
         console.log(data);
       } catch (err) {
-        console.log("cannot get market ", err);
+        console.log('cannot get market ', err);
       }
     };
 
@@ -60,7 +60,7 @@ const Intro = () => {
       }));
 
       const formD = new FormData();
-      formD.append("file", value);
+      formD.append('file', value);
 
       const res = await axios.post(`${API_URL}/upload`, formD, {
         withCredentials: true,
@@ -69,7 +69,7 @@ const Intro = () => {
         },
       });
 
-      console.log("response : ", res.data);
+      console.log('response : ', res.data);
 
       setfinal((prev) => ({
         ...prev,
@@ -84,7 +84,7 @@ const Intro = () => {
         ),
       }));
     } catch (err) {
-      console.log("image upload failed", err);
+      console.log('image upload failed', err);
     } finally {
       setIsuploading(false);
     }
@@ -94,18 +94,18 @@ const Intro = () => {
     setisRunning(true);
 
     try {
-      if (final?.model === "text-image-to-text") {
+      if (final?.model === 'text-image-to-text') {
         const res = await axios.post(`${API_URL}/ai/testrunimg`, final, {
           withCredentials: true,
         });
         setmodelOutput(res.data);
-      } else if (final?.model === "text-to-text") {
+      } else if (final?.model === 'text-to-text') {
         const res = await axios.post(`${API_URL}/ai/testrun`, final, {
           withCredentials: true,
         });
         setmodelOutput(res.data);
       } else {
-        window.alert("Model not found");
+        window.alert('Model not found');
       }
     } catch (err) {
       console.log(err);
@@ -115,95 +115,137 @@ const Intro = () => {
   };
 
   return (
-    <div>
-      <div className='pt-28 w-full' style={{ height: "100vh" }}>
-        <div className='flex flex-col justify-center items-center'>
-          <div className='flex flex-col items-center'>
-            <img className='rounded-xl' src={market.avatar} style={{ width: "300px" }} />
-            <div className='mt-1 flex justify-center' style={{ fontSize: 30, display: "flex" }}>
-              {market?.title}
-            </div>
-            <div className=' ' style={{ fontWeight: 500, marginTop: "10px", marginBottom: "10px" }}>
-              {market?.description}
-            </div>
-            <div style={{ fontWeight: 500 }}>
-              {(market["howtouse"] !== "") ? (
-                <div className='font-thin'>
-                  <span className='font-bold' style={{ fontSize: 18 }}> How to use : </span>
-                  {market["howtouse"]}
+    <div className="gradientbg min-h-screen pt-24 pb-12">
+      <div className="mx-auto max-w-6xl px-4 flex flex-col lg:flex-row gap-8">
+        {/* Left: app info */}
+        <div className="flex-1">
+          <div className="glass-panel p-6 md:p-7 h-full flex flex-col gap-4">
+            <div className="flex items-start gap-4">
+              {market?.avatar && (
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-3xl primary-gradient opacity-40 blur-lg" />
+                  <img
+                    className="relative h-28 w-28 rounded-3xl object-cover border border-slate-800/80"
+                    src={market.avatar}
+                    alt={market?.title}
+                  />
                 </div>
-              ) : ""}
+              )}
+              <div className="space-y-2">
+                <h1 className="text-2xl md:text-3xl font-bold text-slate-50">
+                  {market?.title || 'Loading app...'}
+                </h1>
+                <p className="text-sm text-slate-300/90">
+                  {market?.description}
+                </p>
+              </div>
             </div>
+
+            {market?.howtouse && market.howtouse.trim() !== '' && (
+              <div className="mt-2">
+                <h2 className="text-sm font-semibold text-slate-100 mb-1">
+                  How to use
+                </h2>
+                <p className="text-sm text-slate-300/90 whitespace-pre-line">
+                  {market.howtouse}
+                </p>
+              </div>
+            )}
+
+            {final?.model && (
+              <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Model: {final.model}</span>
+              </div>
+            )}
           </div>
+        </div>
 
-          <div className=''>
-            <div className='' style={{ top: "0px", left: "0px", width: '100vw', height: '100vh' }}>
-              <div className='flex items-center justify-center h-full'>
-                <div className='bg-neutral-700 rounded-xl pt-5' style={{ height: 'calc(100vh - 180px)', maxWidth: "900px", width: "90%" }}>
-                  <div className='flex justify-end gap-2 px-5'>
-                    {isuploading ? (
-                      <div role="status">
-                        <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                          <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-                        </svg>
-                        <span className="sr-only">Loading...</span>
-                      </div>
-                    ) : ""}
+        {/* Right: run panel */}
+        <div className="flex-1">
+          <div className="glass-panel h-full flex flex-col">
+            <div className="flex items-center justify-between px-5 pt-4 pb-2 border-b border-slate-800/80">
+              <div>
+                <h2 className="text-sm font-semibold text-slate-100">
+                  Run this app
+                </h2>
+                <p className="text-xs text-slate-400">
+                  Fill in the inputs below and run the model.
+                </p>
+              </div>
+              <button
+                onClick={handleRun}
+                disabled={isuploading}
+                className="primary-gradient inline-flex items-center justify-center rounded-full px-4 py-1.5 text-xs font-semibold text-white shadow-[0_12px_32px_rgba(79,70,229,0.8)] disabled:opacity-60"
+              >
+                {isuploading ? 'Uploading...' : 'Run app'}
+              </button>
+            </div>
 
-                    <button onClick={handleRun} className='px-2 pb-1 rounded bg-pink-300' disabled={isuploading}>
-                      Run
-                    </button>
+            <div className="flex-1 overflow-y-auto px-5 pb-4 pt-2 space-y-4">
+              {final?.texts &&
+                final.texts.map((text, index) => (
+                  <div key={index} className="space-y-1">
+                    <p className="text-xs font-mono text-slate-300">
+                      {text.prefix}
+                    </p>
+                    <input
+                      onChange={(e) => handleInput(index, e)}
+                      className="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                      type="text"
+                      placeholder={text.placeholder}
+                      value={text.value || ''}
+                    />
                   </div>
+                ))}
 
-                  <div className='overflow-y-auto' style={{ height: "calc(100% - 30px)" }}>
-                    {(final?.texts) ? final.texts.map((text, index) => (
-                      <div key={index} className='px-5 my-4'>
-                        <p className='text-white font-mono'>{text.prefix}</p>
-                        <input
-                          onChange={(e) => handleInput(index, e)}
-                          className='bg-white w-full px-3 py-1 rounded'
-                          type='text'
-                          placeholder={text.placeholder}
-                          value={text.value || ''}
+              {final?.images &&
+                final.images.map((text, index) => (
+                  <div key={index} className="space-y-2">
+                    <p className="text-xs text-slate-300">{text.placeholder}</p>
+                    <label className="inline-flex items-center gap-3 cursor-pointer">
+                      <input
+                        onChange={(e) => handleInputImage(index, e)}
+                        type="file"
+                        accept="image/*"
+                        hidden
+                      />
+                      <div className="relative">
+                        <div className="absolute -inset-1 rounded-2xl border border-slate-700/60" />
+                        <img
+                          src={
+                            files[index]
+                              ? URL.createObjectURL(files[index])
+                              : '/image.png'
+                          }
+                          alt="uploaded preview"
+                          loading="lazy"
+                          className="relative h-24 w-28 sm:h-32 sm:w-40 rounded-2xl object-cover"
                         />
                       </div>
-                    )) : ""}
-
-                    {(final?.images) ? final.images.map((text, index) => (
-                      <div key={index} className='px-5 my-4'>
-                        <p className='text-white font-mono'>{text.placeholder}</p>
-
-                        <label>
-                          <input
-                            onChange={(e) => handleInputImage(index, e)}
-                            type='file'
-                            accept='image/*'
-                            hidden
-                          />
-                          <img
-                            src={files[index] ? URL.createObjectURL(files[index]) : '/image.png'}
-                            alt="uploaded preview"
-                            loading='lazy'
-                            className='rounded h-24 w-28 sm:h-40 sm:w-40 object-cover cursor-pointer mt-4 self-center'
-                          />
-                        </label>
-                      </div>
-                    )) : ""}
-
-                    <div className='text-white font-light p-3 px-5'>
-                      {isRunning ? (
-                        <div>Running...</div>
-                      ) : (
-                        <Markdown>{modelOutput}</Markdown>
-                      )}
-                    </div>
+                      <span className="text-xs text-indigo-300 underline">
+                        {files[index] ? 'Change image' : 'Upload image'}
+                      </span>
+                    </label>
                   </div>
+                ))}
+
+              <div className="mt-4 border-t border-slate-800/80 pt-3">
+                <p className="text-xs font-semibold text-slate-300 mb-1">
+                  Output
+                </p>
+                <div className="output-panel min-h-[90px]">
+                  {isRunning ? (
+                    <div className="text-slate-400 text-xs">Running...</div>
+                  ) : (
+                    <div className="output-markdown">
+                      <Markdown>{modelOutput}</Markdown>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
