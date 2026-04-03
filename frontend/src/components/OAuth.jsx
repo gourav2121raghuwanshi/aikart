@@ -52,9 +52,9 @@ export default function OAuth() {
     <button
       onClick={handleGoogleClick}
       type='button'
-      className='bg-red-700 text-white p-3 rounded-lg uppercase hover:opacity-95'
+      className='w-full rounded-xl border border-slate-700 bg-slate-900/75 px-4 py-3 text-sm font-semibold text-slate-100 hover:border-indigo-400/50 hover:bg-slate-800/80 transition'
     >
-      Continue with google
+      Continue with Google
     </button>
   );
 }
